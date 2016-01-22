@@ -1,0 +1,26 @@
+Examples of object literals
+{
+    firstName: 'aaron'
+}
+
+Object Oriented **Build A course schedule
+function Person(){
+    this.firstName = ''
+}
+
+Closure example **Adds classmates, if a classmate has already been added dont add again..add functionality to display classmates
+@example
+    toast.make()
+
+Callbacks
+
+Dealing with known args (num1, num2)
+@example
+    sum(1, 2)
+
+Dealing with unknown args () **Build a string ('Aaron', 'likes', 'teaching')
+@example
+    adv_sum(1,3,6,3,1,2)
+
+
+Using debugger;
