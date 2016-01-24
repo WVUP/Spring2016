@@ -18,6 +18,23 @@ function sunSign()
 }
 
 //box4
+var list = new Array();
+function insert ()
+{
+	var listValue = document.getElementById('listItem').value;
+	list[list.length] = listValue;
+	show();
+}
+
+function show()
+{
+	var content="<b style='font-size:18px;'>Your List:</b><br/><ul>";
+	for (var i = 0; i < list.length; i++) {
+		content += '<li>' + list[i] + '</li>';
+	}
+	content += "</ul>Total Items: " + i;
+	document.getElementById('content4').innerHTML = content;
+}
 
 //box5
 function pi (num1, num2)

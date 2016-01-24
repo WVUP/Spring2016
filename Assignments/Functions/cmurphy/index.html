@@ -22,11 +22,13 @@
 			<div class="col-md-4 box" id="box1">
 				<h4>class roster : closure/build api</h4>
 				<hr/>
+				<p id="content1"></p>
 			</div>
 			<div class="col-md-2"></div>
 			<div class="col-md-4 box" id="box2">
 				<h4>course schedule : object construction</h4>
 				<hr/>
+				<p id="content2"></p>
 			</div>
 			<div class="col-md-1"></div>
 		</div>
@@ -41,7 +43,6 @@
 						Month: &nbsp
 						<input type="number" class="form-control" id="month" min="1" max="12" value="1">
 					</div>
-					<button class="btn btn-primary" type="submit" style="float:right;">Reset</button>
 					<br/><br/>
 					<div class="form-group">
 						Day: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -52,10 +53,24 @@
 				<hr/>
 				<p id="content3"></p>
 			</div>
-			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<div id="boxReset"style="width: 67%; padding-top: 45%; float:right;">
+					<form>
+						<button class="btn btn-primary" type="submit">Reset</button>
+					</form>
+				</div>
+			</div>
 			<div class="col-md-4 box" id="box4">
 				<h4>dynamic function : unknown args</h4>
 				<hr/>
+				<form class="form-inline">
+					<div class="form-group">
+						<input type="text" class="form-control" id="listItem" placeholder="Item" onclick="this.select();">
+						<input type="button" class="btn btn-primary" value="Add Item" onclick="insert();">
+					</div>
+				</form>
+				<hr/>
+				<div id="content4"></div>
 			</div>
 			<div class="col-md-1"></div>
 		</div>
@@ -73,18 +88,13 @@
 			<div class="col-md-4 box" id="box6">
 				<h4>function : object literals</h4>
 				<hr/>
+				<p id="content6"></p>
 			</div>
 			<div class="col-md-1"></div>
 		</div>
 		<br/>
 
 	</div> <!-- end container -->
-	
-	<div class="navbar navbar-fixed-bottom">
-		<div class="container">
-			footer
-		</div>
-	</div>
 	
 </body>
 </html>
