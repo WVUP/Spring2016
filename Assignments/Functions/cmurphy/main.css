@@ -8,11 +8,12 @@ html {
 }
 
 body {
-  overflow: hidden;
+  /*overflow: hidden;*/
   background-color: #222;
   color: #ccc;
   font-family: "Montserrat";
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUaGhohISElJSUh9lebAAAB20lEQVRIx4XWuZXDMAwE0C0SAQtggIIYoAAEU+aKOHhYojTrYP2+QfOW/5QIJOih/q8HwF/pb3EX+UPIveYcQGgEHiu9hI+ihEc5Jz5KBIlRRRaJ1JtoSAl5Hw96hLB1/up1tnIXOck5jZQy+3iU2hAOKSH1JvwxHsp+5TLF5MOl1/MQXsVs1miXc+KDbYydyMeUgpPQreZ7fWidbNhkXNJSeAhc6qHmHD8AYovunYyEACWEbyIhNeB9fRrH3hFi0bGPLuEW7xCNaohw1vAlS805nfsrTspclB/hVdoqusg53eH7FWot+wjYpOViX8KbFFKTwlnzvj65P9H/vD0/hibYBGhPwlPO8TmxRsaxsNnrUmUXpNhirlJMPr6Hqq9k5Xn/8iYQHYIuQsWFC6Z87IOxLxHphSY4SpuiU87xJnJr5axfeRd+lnMExXpEWPpuZ1v7qZdNBOjiHzDREHX5fs5Zz9p6X0vVKbKKchlSl5rv+3p//FJ/PYvoKryI8vs+2G9lzRmnEKkh+BU8yDk515jDj/HAswu7CCz6U/Mxb/PnC9N41ndpU4hUU7JGk/C9PmP/M2xZYdvBW2PObyf1IUiIzoHmHW9yTncliYs9A9tVNppdShfgQaTLMf+j3X723tLeHgAAAABJRU5ErkJggg==");
+  background-image: url("./images/pattern.png");
+  padding-bottom: 70px;
 }
 
 ul, li {
@@ -42,18 +43,110 @@ h1, h2, h3, h4 {
 	border-color: #0080ff;
 }
 
+#box1
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #fff;
+  background:rgba(0,0,0,0.5);
+  border-color: #0080ff;
+}
+
 #box2 {
 	border-color: #00ff2b;
+}
+
+#box2
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #fff;
+  background:rgba(0,0,0,0.5);
+  border-color: #00ff2b;
 }
 
 #box3 {
 	border-color: #fdff00;
 }
 
+#content3 {
+	text-align: center;
+	font-size: 25;
+}
+
+#box3
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #fff;
+  background:rgba(0,0,0,0.5);
+  border-color: #fdff00;
+}
+
 #box4 {
 	border-color: #bd00ff;
 }
 
+#box4
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #fff;
+  background:rgba(0,0,0,0.5);
+  border-color: #bd00ff;
+}
+
 #box5 {
 	border-color: #ff0000;
+	text-align: center;
+	font-size: 15;
+}
+
+#content5 {
+}
+
+#box5
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #fff;
+  background:rgba(0,0,0,0.5);
+  border-color: #ff0000;
+}
+
+#box6 {
+	border-color: #ffb100;
+}
+
+#box6
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #fff;
+  background:rgba(0,0,0,0.5);
+  border-color: #ffb100;
+}
+
+.form-control {
+	color: #ccc;
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.btn {
+	color: #ccc;
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.navbar-fixed-bottom {
+	background-color: #2c2c2c;
+	padding-top: 5px;
+	box-shadow: 0px -5px 5px 0px rgba(255,255,255,.3);
 }

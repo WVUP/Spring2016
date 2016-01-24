@@ -20,12 +20,12 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-4 box" id="box1">
-				<h4>course schedule : closure example</h4>
+				<h4>class roster : closure/build api</h4>
 				<hr/>
 			</div>
 			<div class="col-md-2"></div>
 			<div class="col-md-4 box" id="box2">
-				<h4>class roster : object construction</h4>
+				<h4>course schedule : object construction</h4>
 				<hr/>
 			</div>
 			<div class="col-md-1"></div>
@@ -34,28 +34,57 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-4 box" id="box3">
-				<h4>something here : static sum</h4>
+				<h4>function : 2 unknown args</h4>
 				<hr/>
+				<form class="form-inline">
+					<div class="form-group">
+						Month: &nbsp
+						<input type="number" class="form-control" id="month" min="1" max="12" value="1">
+					</div>
+					<button class="btn btn-primary" type="submit" style="float:right;">Reset</button>
+					<br/><br/>
+					<div class="form-group">
+						Day: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						<input type="number" class="form-control" id="day" min="1" max="31" value="1">
+					</div>
+					<a class="btn btn-primary" onclick="sunSign()" style="float:right;">Calculate</a>
+				</form>
+				<hr/>
+				<p id="content3"></p>
 			</div>
 			<div class="col-md-2"></div>
 			<div class="col-md-4 box" id="box4">
-				<h4>something here : dynamic sum</h4>
+				<h4>dynamic function : unknown args</h4>
 				<hr/>
 			</div>
 			<div class="col-md-1"></div>
 		</div>
 		<br/>
 		<div class="row">
-			<div class="col-md-4"></div>
+			<div class="col-md-1"></div>
 			<div class="col-md-4 box" id="box5">
-				<h4>something here : debugger</h4>
+				<h4>function : 2 known args</h4>
+				<hr/>
+				<a class="btn btn-primary" onclick="pi('22.0', '7.0')">Calculate Pi</a>
+				<p id="content5"></p>
 				<hr/>
 			</div>
-			<div class="col-md-4"></div>
+			<div class="col-md-2"></div>
+			<div class="col-md-4 box" id="box6">
+				<h4>function : object literals</h4>
+				<hr/>
+			</div>
+			<div class="col-md-1"></div>
 		</div>
+		<br/>
 
 	</div> <!-- end container -->
-
+	
+	<div class="navbar navbar-fixed-bottom">
+		<div class="container">
+			footer
+		</div>
+	</div>
 	
 </body>
 </html>
