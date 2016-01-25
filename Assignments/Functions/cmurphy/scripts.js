@@ -45,3 +45,11 @@ function pi (num1, num2)
 }
 
 //box6
+var counter = 0;
+
+function hackmani ()
+{
+	counter++;
+	if (lines[counter])
+		document.getElementById('content6').innerHTML += lines[counter] + '<br/>';
+}
