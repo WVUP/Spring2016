@@ -1,0 +1,157 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	<body>
+		<!-- STEP ONE - LOG IN -->
+		<div class="step login group" id="loginContainer">
+			<input type="text" class="" name="fname" id="fname" placeholder="First Name" value="fname" />
+
+			<input type="text" class="" name="lname" id="lname" placeholder="Last Name" value="lname" />
+			<span class="btn submit" id="login">Login</span>
+
+			
+		</div> 
+		<div class="wrap main group step" id="main">
+			<div class="message">
+				<p>Hello <span id="fnamePrint">firstName</span> <span id="lnamePrint">lastName</span></p>
+				<span class="btn submit" id="logout">Logout</span>
+			</div>
+			<div class="content">
+				<div id="menu" class="open">
+					<div class="col2"><span id="addClass" class="btn">Create a Course</span></div>
+					<div class="col2"><span id="addStudent" class="btn">Add a Student</span></div>
+					<div class="col2"><span id="viewStudents" class="btn hidden">View Students</span></div>
+					<div class="col2"><span id="classRegister" class="btn hidden">Register for Class</span></div>
+					<div class="col2"><span id="classSchedule" class="btn hidden">Class Schedule</span></div>
+
+				</div>
+				<div id="class">
+					<div class="back" >
+						<span class="backBtn"><< Back</span>
+					</div>
+					<h1>add a class</h1>
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								Course Number<br /><input type="text" name="crn" id="crn" placeholder="Course Number (ex 5239)" />
+							</td>
+							<td>
+								Subject<br />
+								<input type="text" name="subject" id="subject" placeholder="Subject" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Course
+								<br /><input type="text" name="course" id="course" placeholder="Course (ex 201)" />
+							</td>
+							<td>
+								Title<br />
+								<input type="text" name="title" id="title" placeholder="Class Title" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Credits<br />
+								<input type="text" name="credits" id="credits" placeholder="Credit Hours" />
+							</td>
+							<td>
+								Week days of course<br />
+								<input type="text" name="days" id="days" placeholder="ex - M T W H F" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Time
+								<br /><input type="text" name="time" id="time" placeholder="ex 4:00pm - 6:45pm" />
+							</td>
+							<td>
+								Instructor<br />
+								<input type="text" name="instructor" id="instructor" placeholder="Instructors Name" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Room Number<br />
+								<input type="text" name="room" id="room" placeholder="Room Number" />
+							</td>
+							<td>
+								Total Capacity<br />
+								<input type="text" name="capacity" id="capacity" placeholder="Capacity" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<span class="btn" id="submitClass">Submit</span>
+							</td>
+						</td>	
+					</table>
+
+				</div>
+				<div id="student" class="">
+					<div class="back">
+						<span class="backBtn"><< Back</span>
+					</div>
+					<h1>Add a student</h1>
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								First Name<br />
+								<input type="text" name="s_fname" id="s_fname" placeholder="First Name" />
+							</td>
+							<td>
+								Last Name<br />
+								<input type="text" name="s_lname" id="s_lname" placeholder="Last Name" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Address<br />
+								<input type="text" name="s_address" id="s_address" placeholder="Address" />
+							</td>
+							<td>
+								City<br />
+								<input type="text" name="s_city" id="s_city" placeholder="City" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								State<br />
+								<input type="text" name="s_state" id="s_state" placeholder="First Name" />
+							</td>
+							<td>
+								Zip<br />
+								<input type="text" name="s_zip" id="s_zip" placeholder="First Name" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<span class="btn" id="submitStudent">Submit</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="listStudents">
+					<div class="back">
+						<span class="backBtn"><< Back</span>
+					</div>
+					<h1>view Class roster</h1>
+				</div>
+				<div id="register">
+					<div class="back">
+						<span class="backBtn"><< Back</span>
+					</div>
+					<h1>view all students</h1>
+				</div>
+				<div id="schedule">
+					<div class="back">
+						<span class="backBtn"><< Back</span>
+					</div>
+					<h1>view all students</h1>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/script.js"></script>
+</html>

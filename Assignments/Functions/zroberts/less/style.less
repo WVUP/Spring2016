@@ -1,0 +1,198 @@
+@trans-orange: rgba(209, 69, 0, .7);
+@orange: rgb(209,69,0);
+
+
+body{
+	background-image: url('../img/bg.png');
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.step{
+	background-color: rgba(255,255,255,.6);
+
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	margin: -200px 0 0 -300px;
+
+	-webkit-transition: opacity, .5s;
+	-moz-transition: 	opacity, .5s;
+	transition: 		opacity, .5s;
+}
+#loginContainer{
+	display: none;
+	text-align: center;
+	input[type*="text"]{
+		padding: 5px;
+		font-size: 14px;
+		margin: 150px 5px 0;
+
+		&.error{
+			border: 1px solid red;
+		}
+	}
+	.btn{
+		display: block;
+		width: 75px;
+		margin: 10px auto;
+	}
+	&.hidden{
+		display: none;
+	}
+}
+#main{
+	display: block;
+	padding-top: 40px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 	border-box;
+	box-sizing: 		border-box;
+	.message{
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 14px;
+		p{
+			margin: 0 0 10px 0;
+		}
+		span{
+			color: @orange;
+			margin: 0;
+			&.btn{
+				float: right;
+				font-size: 10px;
+				margin-top: 0px;
+			}
+		}
+	}
+	&.visible{
+		display: block;
+	}
+	#menu{
+		padding-top: 80px;
+		.col2{
+			float: left;
+			width: 50%;
+			text-align: center;
+			margin-bottom: 50px;
+			.btn.hidden{
+				display: none;
+			}
+		}
+	}
+	.content>div{
+		display: none;
+		&.open{
+			display: block !important;
+		}
+		.back{
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			font-size: 12px;
+			color: @orange;
+			&:hover, &:active, &:focus{
+				text-decoration: underline;
+				color: #333;
+				cursor: pointer;
+			}
+
+		}
+
+	}
+	#class{
+		padding: 0 15px;
+		h1{
+			font-size: 16px;
+			color: #333;
+			text-transform: uppercase;
+			letter-spacing: .5px;
+		}
+		table{ 
+			width: 100%;
+			tr:last-child{
+				td{
+					text-align: right;
+					border: none;
+				}
+			}
+		}
+		tr{
+
+		}
+		td{
+			font-size: 12px;
+			border-bottom: 1px solid @orange;
+			padding: 7px 2.5%;
+			width: 45%;
+			input[type*="text"]{
+				width: 100%;
+				font-size: 11px;
+				padding: 3px 5px;
+			}
+
+			&:nth-child(odd){
+				border-right: 1px solid @orange;
+			}
+		}
+	}
+	#student{
+		padding: 0 15px;
+		h1{
+			font-size: 16px;
+			color: #333;
+			text-transform: uppercase;
+			letter-spacing: .5px;
+		}
+		table{ 
+			width: 100%;
+			tr:last-child{
+				td{
+					text-align: right;
+					border: none;
+				}
+			}
+		}
+		tr{
+
+		}
+		td{
+			font-size: 12px;
+			border-bottom: 1px solid @orange;
+			padding: 7px 2.5%;
+			width: 45%;
+			input[type*="text"]{
+				width: 100%;
+				font-size: 11px;
+				padding: 3px 5px;
+			}
+
+			&:nth-child(odd){
+				border-right: 1px solid @orange;
+			}
+		}
+	}
+}
+.btn{
+	display: inline-block;
+	padding: 7px 15px;
+	font-size: 12px;
+	color: white !important;
+	background-color: @trans-orange;
+	border: @orange;
+
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius:    7px;
+	border-radius: 		   7px; 
+
+	&:hover, &:active, &:focus{
+		background-color: #333;
+		border: #111;
+		cursor: pointer;
+	}
+}
