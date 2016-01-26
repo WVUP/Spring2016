@@ -15,7 +15,6 @@ body {
   transition: opacity, .5s;
 }
 #loginContainer {
-  display: none;
   text-align: center;
 }
 #loginContainer input[type*="text"] {
@@ -35,7 +34,7 @@ body {
   display: none;
 }
 #main {
-  display: block;
+  display: none;
   padding-top: 40px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -153,6 +152,42 @@ body {
 }
 #main #student td:nth-child(odd) {
   border-right: 1px solid #d14500;
+}
+#main #listStudents {
+  padding: 0 15px;
+}
+#main #listStudents h1 {
+  font-size: 16px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+#main #listStudents table {
+  width: 100%;
+}
+#main #listStudents table td {
+  width: 16.666667%;
+}
+#main #listStudents table.header {
+  background-color: #d14500;
+}
+#main #listStudents table.header td {
+  padding: 5px;
+  color: white;
+  font-size: 12px;
+}
+#main #listStudents .display {
+  background-color: white;
+  height: 275px;
+  overflow-y: scroll;
+}
+#main #listStudents .display table td {
+  padding: 5px;
+  font-size: 12px;
+  background-color: #f5dacc;
+}
+#main #listStudents .display table tr:nth-child(odd) td {
+  background-color: #eee;
 }
 .btn {
   display: inline-block;

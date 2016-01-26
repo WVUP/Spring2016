@@ -1,3 +1,4 @@
+var deleteBtn = [];
 
 //  Combining two known strings to give a complete error message for login 
 function loginError(error1, error2){
@@ -106,9 +107,10 @@ document.getElementById('viewStudents').addEventListener('click', function(e){
 		document.getElementById('menu').className = 
 		document.getElementById('menu').className.replace(/\bopen\b/,'');
 	}
+	listStudents();
 	document.getElementById('listStudents').className += 'open';
 });	
-document.getElementById('classRegister').addEventListener('click', function(e){
+/*document.getElementById('classRegister').addEventListener('click', function(e){
 	e = e || window.event;
 	if(document.getElementById('menu').className == "open"	){
 		document.getElementById('menu').className = 
@@ -123,7 +125,7 @@ document.getElementById('classSchedule').addEventListener('click', function(e){
 		document.getElementById('menu').className.replace(/\bopen\b/,'');
 	}
 	document.getElementById('schedule').className += 'open';
-});
+});*/
 
 
 //Clicking the back Button
@@ -149,7 +151,7 @@ for (var i = 0; i < backButton.length; i++){
 // Function that show's additional UI after at least one Class and one student has been created.
 function showUi(){
 	if(studentArray.length > 0 && classArray.length > 0){
-		alert("You can now register for classes and etc..");
+		//alert("You can now register for classes and etc..");
 		if(document.getElementById('viewStudents').className == "btn hidden"){
 			document.getElementById('viewStudents').className = 
 			document.getElementById('viewStudents').className.replace(/\bhidden\b/);
@@ -254,8 +256,8 @@ CreateClass.prototype = {
 	}
 }
 
-//document.getElementById('submitClass').addEventListener('click', function(e){
-//	e = e || window.event;
+document.getElementById('submitClass').addEventListener('click', function(e){
+	e = e || window.event;
 
 	//Pulling information from input fields
 	var courseNum = document.getElementById('crn').value,
@@ -270,7 +272,7 @@ CreateClass.prototype = {
 		capacity = document.getElementById('capacity').value;
 
 	// Temp Variables for Development
-	var crdt = "4", 
+	/*var crdt = "4", 
 		courseNum = "1234", 
 		course = "101", 
 		days = "M W", 
@@ -279,9 +281,7 @@ CreateClass.prototype = {
 		capacity = "27", 
 		subject = "cs", 
 		title = "Some Title", 
-		time = "9:00am - 10:45am";
-
-	// Error Validation
+		time = "9:00am - 10:45am";*/
 
 	//running class function
 
@@ -293,15 +293,15 @@ CreateClass.prototype = {
 	//console.log(classArray);
 	//console.log(classArray[0].titl)
 
-//});
+});
 
 
 // Clicking on the 
 	
 
 
-	//document.getElementById('submitStudent').addEventListener('click', function(e){
-	//	e = e || window.event;
+	document.getElementById('submitStudent').addEventListener('click', function(e){
+		e = e || window.event;
 
 		(function(s) {
 			var s_fname = document.getElementById('s_fname').value,
@@ -312,17 +312,17 @@ CreateClass.prototype = {
 				s_zip	= document.getElementById('s_zip').value;
 
 			// DEVELOPMENT VARIABLES
-			var s_fname = "Zak",
+			/*var s_fname = "Zak",
 				s_lname = "Roberts",
 				s_address = "133 Oakwood Ave",
 				s_city = "Marietta",
 				s_state = "OH",
-				s_zip = "45750";
+				s_zip = "45750";*/
 
 			s.student = {
 				studentValidate: function(){
 					var errorMsg = "";
-
+					var s_id = "";
 					if(s_fname == ""){
 						errorMsg += "Please add First Name \n";
 					}
@@ -353,12 +353,18 @@ CreateClass.prototype = {
 							}
 						}
 					}
+					if(studentArray.length == 0){
+						s_id = 1;
+					}else{
+						s_id = (studentArray[studentArray.length - 1].st_id) + 1
+					}
 					if(errorMsg != ""){
 						console.error(errorMsg);
 						debugger;
 						return;
 
-					}else{	
+					}else{
+						this.st_id = s_id,
 						this.st_fname = s_fname,
 						this.st_lname = s_lname,
 						this.st_address = s_address,
@@ -378,8 +384,51 @@ CreateClass.prototype = {
 					}
 				}
 			}
-			studentArray.push(this);
+		
 		})(window);
 		student.studentValidate();
 		showUi();
-	//});
+	});
+
+// 
+function listStudents(){
+	var studentString = "";
+	for(i=0; i < studentArray.length; i++){
+		var s_fname = studentArray[i].st_fname,
+			s_lname = studentArray[i].st_lname,
+			s_address = studentArray[i].st_address,
+			s_city = studentArray[i].st_city,
+			s_state = studentArray[i].st_state,
+			s_zip = studentArray[i].st_zip,
+			s_id = studentArray[i].st_id;
+
+		studentString += "<tr><td>" + s_fname + " " + s_lname + "</td><td>" + s_address + "</td><td>" + s_city + "</td><td>" + s_state + "</td><td>" + s_zip + "</td><td><span class=\"delete\" id=\"" + s_id + "\">Delete</span></td></tr>";
+	}
+
+	var  _studentDestination = document.getElementById('studentDisplay');
+	_studentDestination.innerHTML = studentString;
+
+	deleteBtn = document.getElementsByClassName('delete');
+
+	for (var i = 0; i < deleteBtn.length; i++){
+		deleteBtn[i].addEventListener('click', (function(i){
+			
+			return function(){
+				alert('Clicked a Delete');
+				var toDelete = deleteBtn[i].id;
+				for(var a = 0; a < studentArray.length; a++){
+					if(studentArray[a].st_id == toDelete){
+						studentArray.splice(a, 1);
+						break;
+					}
+				}
+				listStudents();
+			};
+		})(i), false);
+	}
+
+}
+
+
+//Clicking the back Button
+	

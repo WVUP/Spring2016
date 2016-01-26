@@ -5,9 +5,9 @@
 	<body>
 		<!-- STEP ONE - LOG IN -->
 		<div class="step login group" id="loginContainer">
-			<input type="text" class="" name="fname" id="fname" placeholder="First Name" value="fname" />
+			<input type="text" class="" name="fname" id="fname" placeholder="First Name" />
 
-			<input type="text" class="" name="lname" id="lname" placeholder="Last Name" value="lname" />
+			<input type="text" class="" name="lname" id="lname" placeholder="Last Name" />
 			<span class="btn submit" id="login">Login</span>
 
 			
@@ -22,8 +22,8 @@
 					<div class="col2"><span id="addClass" class="btn">Create a Course</span></div>
 					<div class="col2"><span id="addStudent" class="btn">Add a Student</span></div>
 					<div class="col2"><span id="viewStudents" class="btn hidden">View Students</span></div>
-					<div class="col2"><span id="classRegister" class="btn hidden">Register for Class</span></div>
-					<div class="col2"><span id="classSchedule" class="btn hidden">Class Schedule</span></div>
+					<!-- <div class="col2"><span id="classRegister" class="btn hidden">Register for Class</span></div>
+					<div class="col2"><span id="classSchedule" class="btn hidden">Class Schedule</span></div> -->
 
 				</div>
 				<div id="class">
@@ -136,7 +136,34 @@
 					<div class="back">
 						<span class="backBtn"><< Back</span>
 					</div>
-					<h1>view Class roster</h1>
+					<h1>Students Enrolled</h1>
+					<table class="header">
+						<tr>
+							<td>
+								Name
+							</td>
+							<td>
+								 Address
+							</td>
+							<td> 
+								City
+							</td>
+							<td>
+								State
+							</td>
+							<td>
+								Zip
+							</td>
+							<td>
+
+							</td>
+						</tr>
+					</table>
+					<div class="display">
+						<table id="studentDisplay">
+
+						</table>
+					</div>
 				</div>
 				<div id="register">
 					<div class="back">
