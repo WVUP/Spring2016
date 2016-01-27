@@ -1,0 +1,112 @@
+/*
+font-family: 'Nothing You Could Do', cursive;
+
+font-family: 'Fredericka the Great', cursive;
+
+font-family: 'Belleza', sans-serif;
+
+font-family: 'Advent Pro', sans-serif;
+
+*/
+
+
+body {
+	background-color: #003133;
+}
+
+.jumbotron {
+	background: url("https://stochasticseeker.files.wordpress.com/2011/11/cropped-wavy_header.jpg");
+}
+
+.page-header h1 {
+	font-family: 'Fredericka the Great', cursive;
+	color: white;
+}
+
+.well {
+	text-align: center;
+}
+
+.btn-default {
+	background-color: orange;
+	font-family: 'Nothing You Could Do', cursive;
+	color: black;
+	width: 100px;
+	padding: 10px;
+
+}
+
+#render {
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 20px;
+	margin-right: 40px;
+	width: 20px;
+	display: inline-block;
+	
+}
+
+#renderPass {
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 20px;
+	margin-left: 40px;
+	width: 20px;
+	display: inline-block;
+	
+}
+
+.input {
+	border-radius: 5px;
+	font-family: 'Advent Pro', sans-serif;
+	background-color: black;
+	color: gray;
+	border-style: solid;
+	height: 40px;
+	padding-left: 10px;
+	display: inline-block;
+
+}
+
+.create h2
+{
+	font-family: 'Belleza', sans-serif;
+}
+
+.removeStudent h2 {
+	font-family: 'Belleza', sans-serif;
+}
+
+.display h2 {
+	font-family: 'Belleza', sans-serif;
+}
+
+.display {
+	display: block;
+}
+
+#name {
+	display: inline-block;
+	margin-right: 20px;
+	font-family: 'Belleza', sans-serif;
+	font-size: 18px;
+}
+
+#pass {
+	display: inline-block;
+	font-family: 'Belleza', sans-serif;
+	margin-left: 20px;
+	font-size: 18px;
+}
+
+#display {
+	
+}
+
+.studentDisplay {
+	margin-top: 40px;
+	display: block;
+}
+
+.bar
+{
+	padding: 0px;
+}

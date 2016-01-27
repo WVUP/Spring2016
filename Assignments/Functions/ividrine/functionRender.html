@@ -1,0 +1,89 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Functions</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="functionScript.js"></script>
+	<link rel="stylesheet" href="newFunctionStyle.css">
+	<link href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Fredericka+the+Great|Belleza|Advent+Pro' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div class="container">
+
+	<div class="jumbotron">
+
+	<div class="page-header">
+
+		<h1>Manage Students <small> using JavaScript </small></h1>
+
+	</div>
+
+	</div>
+
+	<div class="well">
+
+		<div class="create">
+
+			<h2>Create a student</h2>
+
+			<form name="logIn">
+
+				<input class="input" type="text" name="userName" placeholder="username">
+				<input class="input" type="password" name="passWord" placeholder="password">
+
+			</form>
+
+			<div id="create" type="button" class="btn btn-default">Create</div>
+
+		</div>
+
+	</div>
+
+	<div class="well">
+
+		<div class="removeStudent">
+
+			<h2>Remove a student</h2>
+
+			<form name="remove">
+
+					<input class="input" type="text" name="usn" placeholder="username">
+					<input class="input" type="password" name="pw" placeholder="password">
+
+			</form>
+
+		</div>
+
+		<div id="remove" type="button" class="btn btn-default">Remove</div>
+
+	</div>
+
+	<div class="well">
+
+		<div class="display">
+
+			<h2>Display all students</h2>
+
+			<div id="display" type="button" class="btn btn-default">Go!</div>
+
+		</div>
+
+		<h3 id="name"></h3><h3 id="pass"></h3>
+		<p id="bar"></p>
+
+		<div class="studentDisplay">
+
+			<p id="render"></p> <p id="renderPass"></p>
+
+		</div>
+
+	</div>
+
+</div>
+</body>
+
+
+
