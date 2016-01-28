@@ -31,7 +31,7 @@ Student.prototype =
 		var listStudents = document.getElementById('content1');
 		var sContent ='<ul>';
 		for (var i = 0; i < students.length; i++) {
-			sContent += '<li>' + students[i] + '</li>';
+			sContent += '<li>' + students[i].fullName + '</li>';
 		};
 		listStudents.innerHTML = sContent;
 	}
