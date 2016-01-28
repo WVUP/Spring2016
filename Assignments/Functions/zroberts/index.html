@@ -22,9 +22,8 @@
 					<div class="col2"><span id="addClass" class="btn">Create a Course</span></div>
 					<div class="col2"><span id="addStudent" class="btn">Add a Student</span></div>
 					<div class="col2"><span id="viewStudents" class="btn hidden">View Students</span></div>
-					<!-- <div class="col2"><span id="classRegister" class="btn hidden">Register for Class</span></div>
-					<div class="col2"><span id="classSchedule" class="btn hidden">Class Schedule</span></div> -->
-
+					<div class="col2"><span id="classRegister" class="btn hidden">Register for Class</span></div>
+					<div class="col2"><span id="classSchedule" class="btn hidden">Class Schedule</span></div>
 				</div>
 				<div id="class">
 					<div class="back" >
@@ -169,13 +168,57 @@
 					<div class="back">
 						<span class="backBtn"><< Back</span>
 					</div>
-					<h1>view all students</h1>
+					<h1>Register Student</h1>
+
+					<select id="studentRegisterSelect">
+
+					</select>
+					<select id="classRegisterSelect">
+						
+					</select>
+					<span class="btn" id="registerForClass">Register</span>
+
 				</div>
 				<div id="schedule">
 					<div class="back">
 						<span class="backBtn"><< Back</span>
 					</div>
-					<h1>view all students</h1>
+					<h1>Students Schedule</h1>
+					<select id="selectStudent">
+						
+					</select>
+					<span class="btn" id="select">Select</span>
+					<table class="header">
+						<tr>
+							<td>
+								Class Title
+							</td>
+							<td>
+								Days of Week
+							</td>
+							<td> 
+								Time
+							</td>
+							<td>
+								Credits
+							</td>
+						</tr>
+					</table>
+					<div class="display">
+						<table id="studentDisplay">
+
+						</table>
+					</div>
+					<div class="total">
+						<table>
+							<td colspan="3">
+								Total Credits
+							</td>
+							<td id="totalCredits">
+
+							</td>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

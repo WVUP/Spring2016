@@ -55,7 +55,6 @@ document.getElementById('login').addEventListener('click', function(e){
 
 	document.getElementById('loginContainer').className += " hidden";
 	document.getElementById('main').className += " visible";
-
 });
 
 // Logout Button Selection
@@ -84,48 +83,44 @@ document.getElementById('logout').addEventListener('click', function(e){
 	}
 });
 
-//Clicking through the options on the "menu" page.
-document.getElementById('addClass').addEventListener('click', function(e){
-	e = e || window.event;
+
+function showPage(id){
 	if(document.getElementById('menu').className == "open"){
 		document.getElementById('menu').className = 
 		document.getElementById('menu').className.replace(/\bopen\b/,'');
 	}
-	document.getElementById('class').className += 'open';
+	document.getElementById(id).className += 'open';
+}
+//Clicking through the options on the "menu" page.
+document.getElementById('addClass').addEventListener('click', function(e){
+	e = e || window.event;
+	showPage('class');
 });	
 document.getElementById('addStudent').addEventListener('click', function(e){
 	e = e || window.event;
-	if(document.getElementById('menu').className == "open"	){
-		document.getElementById('menu').className = 
-		document.getElementById('menu').className.replace(/\bopen\b/,'');
-	}
-	document.getElementById('student').className += 'open';
+	showPage('student');
 });	
 document.getElementById('viewStudents').addEventListener('click', function(e){
 	e = e || window.event;
-	if(document.getElementById('menu').className == "open"	){
-		document.getElementById('menu').className = 
-		document.getElementById('menu').className.replace(/\bopen\b/,'');
-	}
+
+	
 	listStudents();
-	document.getElementById('listStudents').className += 'open';
+
+	showPage('listStudents');
 });	
-/*document.getElementById('classRegister').addEventListener('click', function(e){
+document.getElementById('classRegister').addEventListener('click', function(e){
 	e = e || window.event;
-	if(document.getElementById('menu').className == "open"	){
-		document.getElementById('menu').className = 
-		document.getElementById('menu').className.replace(/\bopen\b/,'');
-	}
-	document.getElementById('register').className += 'open';
+
+	showRegister();
+	showPage('register');
+	
 });
 document.getElementById('classSchedule').addEventListener('click', function(e){
 	e = e || window.event;
-	if(document.getElementById('menu').className == "open"	){
-		document.getElementById('menu').className = 
-		document.getElementById('menu').className.replace(/\bopen\b/,'');
-	}
-	document.getElementById('schedule').className += 'open';
-});*/
+
+	showPage('schedule');
+});
+
 
 
 //Clicking the back Button
@@ -148,7 +143,9 @@ for (var i = 0; i < backButton.length; i++){
 }
 
 
-// Function that show's additional UI after at least one Class and one student has been created.
+
+
+// Function that shows additional UI after at least one Class and one student has been created.
 function showUi(){
 	if(studentArray.length > 0 && classArray.length > 0){
 		//alert("You can now register for classes and etc..");
@@ -168,13 +165,20 @@ function showUi(){
 }
 
 
+// Setting Student and Class Arrays
 var classArray = [];
 var studentArray = [];
 
 
+/*******************************************
+**** Starting Class Creation
+*******************************************/
+
+// Building a function with an unknown amount of arguments
 function classError(){
 	//alert("running error script");
 	console.clear();
+	// Looping through the arguments
 	for(i = 0; i < arguments.length; i++){
 		if(arguments[i] != ""){
 			console.error(arguments[i]);
@@ -201,21 +205,44 @@ function CreateClass (courseNumber, subject, course, title, credits, days, time,
 
 	this.validate();
 	if(errorCount == 0){
-		//alert("going to push");
+		alert('Added Class');
 		this.init();
+
+		//Reset Form if Completed Succesfully
+		document.getElementById('crn').value = "";
+		document.getElementById('subject').value = "";
+		document.getElementById('course').value = "";
+		document.getElementById('title').value = "";
+		document.getElementById('credits').value = "";
+		document.getElementById('days').value = "";
+		document.getElementById('time').value = "";
+		document.getElementById('instructor').value = "";
+		document.getElementById('room').value = "";
+		document.getElementById('capacity').value = "";
 	}else{
 		classError(crnAlert, subAlert, titlAlert, crdAlert, dayAlert, tmeAlert, instAlert, rmAlert, stsAlert);
 		return;
 	}
 }
+
+// Creating Class Prototypes
 CreateClass.prototype = {
 	init: function(){
 		classArray.push(this);
 	},
 	validate: function(){
 		if(!this.crn){
-			crnAlert = 'Course Number Needed \n';
+			crnAlert += 'Course Number Needed \n';
 			errorCount++;
+		}
+		if(classArray.length != 0){
+			for(i = 0; i < classArray.length; i++){
+				if(classArray[i].crn == this.crn){
+					crnAlert += "Course Number already in use \n";
+					errorCount++;
+					break;
+				}
+			}
 		}
 		if(!this.sub){
 			subAlert = 'Subject is Required \n';
@@ -229,7 +256,7 @@ CreateClass.prototype = {
 			titlAlert = "Course Title is required \n";
 			errorCount++;
 		}
-		if(!this.crd){
+		if(!this.crd || isNaN(this.crd)){
 			crdAlert = "# of Credits is required \n";
 			errorCount++;
 		}
@@ -256,6 +283,24 @@ CreateClass.prototype = {
 	}
 }
 
+
+	// Development Variables
+	var crdt = "4", 
+		courseNum = "1234", 
+		course = "101", 
+		days = "M W", 
+		inst = "Edison", 
+		room = "CS 124", 
+		capacity = "27", 
+		subject = "cs", 
+		title = "Some Title", 
+		time = "9:00am - 10:45am";
+
+	//running class function
+
+	new CreateClass(courseNum, subject, course, title, crdt, days, time, inst, room, capacity);
+
+
 document.getElementById('submitClass').addEventListener('click', function(e){
 	e = e || window.event;
 
@@ -272,21 +317,9 @@ document.getElementById('submitClass').addEventListener('click', function(e){
 		capacity = document.getElementById('capacity').value;
 
 	// Temp Variables for Development
-	/*var crdt = "4", 
-		courseNum = "1234", 
-		course = "101", 
-		days = "M W", 
-		inst = "Edison", 
-		room = "CS 124", 
-		capacity = "27", 
-		subject = "cs", 
-		title = "Some Title", 
-		time = "9:00am - 10:45am";*/
 
-	//running class function
 
 	new CreateClass(courseNum, subject, course, title, crdt, days, time, inst, room, capacity);
-
 
 	showUi();
 
@@ -295,11 +328,16 @@ document.getElementById('submitClass').addEventListener('click', function(e){
 
 });
 
+/*******************************************
+**** Ending Class Creation
+*******************************************/
 
-// Clicking on the 
-	
 
+/*******************************************
+**** Starting Student Creation
+*******************************************/
 
+// Creating a student on SubmitStudent 	
 	document.getElementById('submitStudent').addEventListener('click', function(e){
 		e = e || window.event;
 
@@ -311,13 +349,13 @@ document.getElementById('submitClass').addEventListener('click', function(e){
 				s_state = document.getElementById('s_state').value,
 				s_zip	= document.getElementById('s_zip').value;
 
-			// DEVELOPMENT VARIABLES
-			/*var s_fname = "Zak",
+			// DEVELOPMENT VARIABLES 
+			var s_fname = "Zak",
 				s_lname = "Roberts",
 				s_address = "133 Oakwood Ave",
 				s_city = "Marietta",
 				s_state = "OH",
-				s_zip = "45750";*/
+				s_zip = "45750";
 
 			s.student = {
 				studentValidate: function(){
@@ -373,7 +411,7 @@ document.getElementById('submitClass').addEventListener('click', function(e){
 						this.st_zip = s_zip;
 
 						studentArray.push(this);
-						//alert('Succesfully Added Student');
+						alert('Succesfully Added Student');
 
 						document.getElementById('s_fname').value = "";
 						document.getElementById('s_lname').value = "";
@@ -389,8 +427,12 @@ document.getElementById('submitClass').addEventListener('click', function(e){
 		student.studentValidate();
 		showUi();
 	});
+/*******************************************
+**** Ending Student Creation
+*******************************************/
 
-// 
+
+// Function that Lists students on View Students Page, called above when you select "View students" from main menu.
 function listStudents(){
 	var studentString = "";
 	for(i=0; i < studentArray.length; i++){
@@ -410,6 +452,7 @@ function listStudents(){
 
 	deleteBtn = document.getElementsByClassName('delete');
 
+	// Looping through delete buttons and adding and event listener for click that deletes students by their student ID number
 	for (var i = 0; i < deleteBtn.length; i++){
 		deleteBtn[i].addEventListener('click', (function(i){
 			
@@ -429,6 +472,89 @@ function listStudents(){
 
 }
 
+// Function that pulls student ID, and Name along with Course Number and Class Title and places them in a select field.
+function showRegister(){
+	var studentsString = "";
+	var classString = "";
 
-//Clicking the back Button
+	for(var i = 0; i < studentArray.length; i++){
+		studentsString += "<option value=\"" + studentArray[i].st_id + "\">" + studentArray[i].st_fname + " " + studentArray[i].st_lname + "</option>";
+	}
+	for (var i = 0; i <  classArray.length; i++){
+		classString += "<option value=\"" + classArray[i].crn + "\">" + classArray[i].titl + "</option>";
+	}
 	
+	document.getElementById('studentRegisterSelect').innerHTML = studentsString;
+	document.getElementById('classRegisterSelect').innerHTML = classString;
+}
+
+// Creating array for storing Registration
+var registerArray = [];
+
+document.getElementById('registerForClass').addEventListener('click', function(e){
+	e = e || window.event;
+
+	// Taking Student ID from Value of student <select> and Course Number from Class <select>
+	(function(r){
+		var r_studentId = document.getElementById('studentRegisterSelect').value,
+			r_classNum = document.getElementById('classRegisterSelect').value;
+
+
+		r.register = {
+			registerValidate : function(){
+				var errorMesg = "";
+				
+
+				// ASK ABOUT THIS - Throws error of unknown function when attempted to use below
+				/*function pushArray(){
+					this.rg_studentId = r_studentId,
+					this.rg_classNum = r_classNum;
+
+
+					registerArray.push(this);
+
+					alert('Successfully Registered for Class');
+				}*/ 
+
+
+				// If register Array is empty
+				if(registerArray.length == 0){
+					this.rg_studentId = r_studentId,
+					this.rg_classNum = r_classNum;
+
+
+					registerArray.push(this);
+
+					alert('Successfully Registered for Class');
+
+					// pushArray();
+				}else{
+					//checking to see if student id and class number combination has already been pushed to array (if student is already register for class)
+					for(i = 0; i < registerArray.length; i++){
+						if(r_studentId == registerArray[i].rg_studentId && r_classNum == registerArray[i].rg_classNum){
+							errorMesg = "The Student is already Registered for this class";
+							break;
+						}
+					}
+					if(errorMesg != ""){
+						console.error(errorMesg);
+						debugger;
+						return;
+					}else{
+						this.rg_studentId = r_studentId,
+						this.rg_classNum = r_classNum;
+
+
+						registerArray.push(this);
+
+						alert('Successfully Registered for Class');
+
+						pushArray();
+					}
+				}
+			}
+			
+		}
+	})(window);
+	register.registerValidate();
+})
