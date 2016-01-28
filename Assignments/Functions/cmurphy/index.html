@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./main.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="./manifesto.js"></script>
 	<script src="./scripts.js"></script>
 </head>
@@ -16,13 +17,20 @@
 		<div class="jumbotron transparent">
 			<h2>j s S n i p p e t s</h2>
 			<br/>
-			<p>javascript examples in action - based on topics learned in CS329: advanced web design class</p>
+			<p>javascript function examples in action - based on topics learned in CS329: advanced web design class</p>
 		</div>
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-4 box" id="box1">
 				<h4>class roster : closure/build api</h4>
 				<hr/>
+				<form id="students">
+					<input type="text" class="form-control" id="fName" placeholder="First Name" onclick="this.select();"><br/>
+					<input type="text" class="form-control" id="lName" placeholder="Last Name" onclick="this.select();"><br/>
+					<input type="button" class="btn btn-primary" value="Create" onclick="new Student">
+					<input type="button" class="btn btn-primary" value="Delete" onclick="">
+					<input type="button" class="btn btn-primary" style="float: right;" value="List Students" onclick="Student.displayStudents">
+				</form>
 				<p id="content1"></p>
 			</div>
 			<div class="col-md-2"></div>
@@ -71,6 +79,7 @@
 					</div>
 				</form>
 				<hr/>
+				<b style='font-size:18px;'>Your List:</b><br/><br/>
 				<div id="content4"></div>
 			</div>
 			<div class="col-md-1"></div>
@@ -82,6 +91,7 @@
 				<h4>function : 2 known args</h4>
 				<hr/>
 				<a class="btn btn-primary" onclick="pi('22.0', '7.0')">Calculate Pi</a>
+				<a class="btn btn-primary" onclick="fIntro()">Factors in Console</a>
 				<p id="content5"></p>
 				<hr/>
 			</div>
@@ -89,7 +99,8 @@
 			<div class="col-md-4 box" id="box6">
 				<h4>function : object literals</h4>
 				<hr/>
-				<a class="btn btn-primary" onclick="hackmani();">Show Next</a>
+				<a class="btn btn-primary" onclick="hackmaniNext();">Show Next</a>
+				<a class="btn btn-primary" onclick="hackmaniAll();">Show All</a>
 				<hr/>
 				<p id="content6"></p>
 			</div>

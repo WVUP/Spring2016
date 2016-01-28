@@ -1,4 +1,42 @@
 //box1
+var students = [];
+function Student (fName, lName)
+{
+	this.firstName = document.getElementById('fName').value;
+	this.lastName = document.getElementById('lName').value;
+	this.fullName = this.firstName + ' ' + this.lastName;
+
+	this.createStudent();
+}
+
+Student.prototype =
+{
+	createStudent: function ()
+	{
+		for (var i = 0; i < students.length; i++) 
+		{
+			if (fName == students[i].fName && lName == students[i].lName)
+				document.getElementById('content1').innerHTML = 'Student already exists';
+		}
+		students.push(this);
+		document.getElementById('content1').innerHTML = 'Student created';
+	},
+	removeStudent: function (callback)
+	{
+		if (callback)
+			callback();
+	},
+	displayStudents: function ()
+	{
+		var listStudents = document.getElementById('content1');
+		var sContent ='<ul>';
+		for (var i = 0; i < students.length; i++) {
+			sContent += '<li>' + students[i] + '</li>';
+		};
+		listStudents.innerHTML = sContent;
+	}
+}
+
 
 //box2
 
@@ -19,6 +57,7 @@ function sunSign()
 
 //box4
 var list = new Array();
+
 function insert ()
 {
 	var listValue = document.getElementById('listItem').value;
@@ -26,9 +65,9 @@ function insert ()
 	show();
 }
 
-function show()
+function show ()
 {
-	var content="<b style='font-size:18px;'>Your List:</b><br/><ul>";
+	var content="<ul>";
 	for (var i = 0; i < list.length; i++) {
 		content += '<li>' + list[i] + '</li>';
 	}
@@ -44,12 +83,54 @@ function pi (num1, num2)
 	document.getElementById('content5').innerHTML = piString + pi;
 }
 
+function fIntro ()
+{
+	document.getElementById('content5').innerHTML = '<br/>In console, call the factor function with:  <br/><em>factor(x, y)</em>';
+}
+
+function factor (y, x) 
+{
+	var mod = x % y;
+	if (!mod)
+	{
+		result = y +' is a factor of '+ x;
+		console.log(result);
+	}	
+	if (mod)
+	{
+		result = y +' is a not factor of '+ x;
+		console.log(result);
+	}
+}
+
 //box6
+var me = 
+{
+	firstName: 'Casey',
+	"first name": 'Casey',
+	lastName: 'Murphy',
+	"last name": 'Murphy',
+	age: 34
+}
+
 var counter = 0;
 
-function hackmani ()
+function hackmaniNext ()
 {
-	counter++;
+	if (document.getElementById('content6').innerHTML)
+		document.getElementById('content6').innerHTML = '';
+
 	if (lines[counter])
 		document.getElementById('content6').innerHTML += lines[counter] + '<br/>';
+	counter++;
+}
+
+function hackmaniAll ()
+{
+	if (document.getElementById('content6').innerHTML)
+		document.getElementById('content6').innerHTML = '';
+
+	for (var i = 0; i < lines.length; i++) {
+		document.getElementById('content6').innerHTML += lines[i] + '<br/>';
+	};
 }
