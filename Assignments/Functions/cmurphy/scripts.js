@@ -19,7 +19,7 @@ Student.prototype =
 				document.getElementById('content1').innerHTML = 'Student already exists';
 		}
 		students.push(this);
-		document.getElementById('content1').innerHTML = 'Student created';
+		setTimeout(function () {document.getElementById('content1').innerHTML = 'Student created';}, 500);
 	},
 	removeStudent: function (callback)
 	{
