@@ -152,19 +152,22 @@ app.get('/teleShows/:teleShowsID', function (req,res) {
 });
 
 app.get('/teleShows/:teleShowsID/seasons/:seasonNum', function (req,res) {
+	var _id = req.params.teleShowsID;
 	var sn = req.params.seasonNum;
 	var season;
+	var show;
 
 	for (var i = 0; i < teleShows.length; i++) {
-		if (sn == teleShows[i].seasons) {
+		if (sn == teleShows[i].seasons && _id == teleShows[i].id) {
 			season = teleShows[i].seasons;
+			show = teleShows[i];
 			break;
 		}
 		
 	}
 
-	if (sn != teleShows[i].seasons) {
-			return res.send("The number of seasons is incorrect.");
+	if (!season || !show) {
+			return res.send("The numbers you entered are incorrect.");
 		};
 
 	res.send("Season" + " " + (season) + " " + "has an overall rating of " + (teleShows[i].rating) + " " + "out of 5! " + (teleShows[i].title) + ":" + " " + (teleShows[i].synopsis));
