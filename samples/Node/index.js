@@ -6,6 +6,13 @@ var bodyParser = require('body-parser');
 // Create an app using express
 var app = express();
 
+// Make sure we require mongodb =)
+var mongodb = require('mongodb');
+
+
+var MongoClient = mongodb.MongoClient;
+
+
 
 // Every route will now parse the body if available
 app.use(bodyParser.json());
@@ -104,9 +111,95 @@ app.put('/api/students/:studentID', function (req, res) {
 
 
 
+var _db;
+app.get('/api/tvshows', function(req, res) {
+	
+	var collection = _db.collection('tv_show');
+	collection.find({}, function(err, cursor) {
+		if(err)
+			return res.send(err);
 
+		cursor.toArray(function(err, docs) {
+			if(err)
+				return res.send(err);
 
-// Start our app up and have it listening for requests
-app.listen(3000, function () {
-	console.log('Our app is now listening on port: 3000');
+			res.send(docs);
+		});
+	});
+
 });
+
+app.get('/api/tvshows/:id', function(req, res) {
+	
+	var collection = _db.collection('tv_show');
+
+	// We need to convert our string id into the appropriate ObjectID
+	// data type so that we can search it properly in MongoDB
+	var query = {
+		_id: mongodb.ObjectID(req.params.id)
+	};
+
+	// findOne returns back a single document therefor no cursor
+	collection.findOne(query, function(err, doc) {
+		if(err)
+			return res.send(err);
+
+		res.send(doc);
+	});
+
+});
+
+app.get('/api/tvshows/genre/:genre', function(req, res) {
+	var collection = _db.collection('tv_show');
+
+	var query = {
+		genre: {
+			$regex: req.params.genre,
+			$options: 'i'
+		}
+	};
+
+	// An optional field that if we see it, we will add it to our
+	// query expression
+	if(req.query.search){
+		query.franchise = {
+			$regex: '.*' + req.query.search + '.*',
+			$options: 'i'
+		}
+		console.log(JSON.stringify(query));
+	}
+
+	collection.find(query, function(err, cursor) {
+		if(err)
+			return res.send(err);
+
+		// limit() only grabs 10 documents
+		cursor
+			.limit(10)
+			.toArray(function(err, docs) {
+				if(err)
+					return res.send(err);
+
+				res.send(docs);
+			});
+	});
+});
+
+// Connection URL
+var connString = 'mongodb://afreeland:testing@ds061385.mongolab.com:61385/wvup_shows';
+
+// Use connect method to connect to the Server
+MongoClient.connect(connString, function(err, db) {
+	if(err)
+		return console.log(err);
+	
+  console.log("Connected correctly to server");
+
+  	// Start our app up and have it listening for requests
+	app.listen(3000, function () {
+		console.log('Our app is now listening on port: 3000');
+	});
+
+  _db = db;
+});
+
