@@ -183,7 +183,7 @@ app.put('/teleShows/:teleShowsID', function (req,res) {
 	for (var i = 0; i < teleShows.length; i++) {
 		if (_id = teleShows[i].id) {
 			show = teleShows[i];
-			break
+			break;
 		}
 		
 	}
@@ -192,8 +192,8 @@ app.put('/teleShows/:teleShowsID', function (req,res) {
 			return res.send("OOOooops try again.");
 		};
 
-	console.log(req.body);
- 	res.send('HIT');
+	console.log('Hit');
+ 	res.send(req.body);
 });
 
 // app.post inserts data
@@ -211,21 +211,4 @@ app.post('/teleShows', function (req,res) {
 	res.send(_show);
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
