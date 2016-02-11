@@ -13,8 +13,8 @@ app.listen(3000, function () {
 });
 
 // Making routes, kind of similar to directories
-// app.get is going to the website the user requests. This is what it sends back to the user.
-// The routes created are: 
+// app.get is going to the port the user requests. This is what it sends back to the user.
+// The routes created are: main port ('/'), 'teleShows'
 
 app.get('/', function (req, res) {
 	res.send('Hello World');
@@ -26,70 +26,70 @@ var teleShows = [
 {
 	id: 1,
 	title: "Bob's Burgers",
-	rating: "3",
+	rating: 3,
 	seasons: 4,
 	synopsis: "Bob Belcher is a third-generation restaurateur who runs Bob's Burgers with his loving wife and their three children."
 },
 {
 	id: 2,
 	title: "Downton Abbey",
-	rating: "5",
+	rating: 5,
 	seasons: 6,
 	synopsis: "This British drama series follows the lives of the Crawley family and its servants in the family's classic Georgian country house."
 },
 {
 	id: 3,
 	title: "Cadfael",
-	rating: "5",
+	rating: 5,
 	seasons: 5,
 	synopsis: "Brother Cadfael is the main fictional character in a series of historical murder mysteries written between 1977 and 1994 by the linguist-scholar Edith Pargeter under the name 'Ellis Peters'."
 },
 {
 	id: 4,
 	title: "Grand Designs",
-	rating: "2",
+	rating: 2,
 	seasons: 15,
 	synopsis: "Series featuring the challenges faced by people designing and building their dream houses."
 },
 {
 	id: 5,
 	title: "Merlin",
-	rating: "5",
+	rating: 5,
 	seasons: 5,
 	synopsis: "Revisits the saga of King Arthur and his wizard, Merlin, by focusing on the two characters when they were ambitious young men struggling to understand their destinies."
 },
 {
 	id: 6,
 	title: "Saxondale",
-	rating: "4",
+	rating: 4,
 	seasons: 2,
 	synopsis: "Tommy Saxondale is a world-travelled ex-roadie with anger-management issues and a pest control business in Stevenage."
 },
 {
 	id: 7,
 	title: "Twin Peaks",
-	rating: "1",
+	rating: 1,
 	seasons: 2,
 	synopsis: "FBI Agent Dale Cooper travels to the small logging town of Twin Peaks to solve the murder of seemingly innocent high schooler Laura Palmer."
 },
 {
 	id: 8,
 	title: "Portlandia",
-	rating: "1",
+	rating: 1,
 	seasons: 6,
 	synopsis: "Satirical sketch comedy television series set and filmed in and around Portland, Oregon starring Carrie Brownstein and Fred Armisen."
 },
 {
 	id: 9,
 	title: "Longmire",
-	rating: "3",
+	rating: 3,
 	seasons: 4,
 	synopsis: "Longmire patrols the county with a brave face and sense of humor, but deep inside he hides the pain of his wife's recent death."
 },
 {
 	id: 10,
 	title: "It's Always Sunny in Philadelphia",
-	rating: "5",
+	rating: 5,
 	seasons:11,
 	synopsis: "Several friends own Paddy's Pub, a neighborhood bar in Philadelphia, and try to find their way in the world of work and relationships."
 }
@@ -125,10 +125,10 @@ app.get('/teleShows', function (req, res) {
 });
 
 
-//want a particular list. creating a parameter string. so when matched it hits this code. the colon is 
-//saying that this is what we are looking for overall. want you to create  a field to tv shows ID and put that in the path
+// Want a particular list. Creating a parameter string so when matched, it hits this code. The colon is adding a parameter.
+// Saying that this is what we are looking for overall. Wants you to create a field to tv shows ID and put that in the path
 
-// user puts the 2 in the address bar so it uses that 2 parameter. Then it passes in the info that matches that id of 2 which is 
+// User puts the 2 in the address bar so it uses that 2 parameter. Then, it passes in the info that matches that id of 2 which is 
 // downton abbey.
 
 app.get('/teleShows/:teleShowsID', function (req,res) {
@@ -175,7 +175,7 @@ app.get('/teleShows/:teleShowsID/seasons/:seasonNum', function (req,res) {
 });
 
 
-// app.put allows you to send this update to the database. colon means that it is a route parameter
+// app.put allows you to send this update to the database. Colon means that it is a route parameter.
 app.put('/teleShows/:teleShowsID', function (req,res) {
 	var _id = req.params.teleShowsID;
 	var show;
