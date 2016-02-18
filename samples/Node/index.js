@@ -129,6 +129,78 @@ app.get('/api/tvshows', function(req, res) {
 
 });
 
+app.post('/api/tvshows', function(req, res) {
+	var _body = req.body;
+
+	if(Object.keys(_body).length == 0)
+		return res.send('Keys fool, we need keys');
+
+	var collection = _db.collection('tv_show');
+	collection.insert(_body, function(err, doc) {
+		if(err)
+			return res.send(err);
+
+		res.send(doc);
+	});
+});
+
+function parseID(req, res, next) {
+	var _id
+	try{
+		_id = mongodb.ObjectID(req.params.id);
+	}catch(err){
+		res.send('Error parsing: ' + err);
+		return;
+	}
+
+	req._id = _id;
+	next();
+}
+
+function tag_it(req, res, next) {
+	var _tags = req.query.tags;
+	if(!_tags)
+		return next();
+
+	var arrTags = _tags.split(',');
+	req.tags = arrTags;
+
+	next();
+}
+
+app.put('/api/tvshows/:id', parseID, tag_it, function(req, res) {
+	
+	var query = {
+		_id: req._id
+	};
+
+	var _body = req.body;
+
+	if(req.tags)
+		_body.tags = req.tags;
+
+	var collection = _db.collection('tv_show');
+	collection.update(
+		// Our query object
+		query,
+
+		// Our update document
+		_body,
+
+		// Options
+		{},
+
+		function(err, status){
+			if(err)
+				res.send(err);
+
+			res.json(status);
+		}
+
+		)
+
+});
+
 app.get('/api/tvshows/:id', function(req, res) {
 	
 	var collection = _db.collection('tv_show');
