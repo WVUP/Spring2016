@@ -19,6 +19,7 @@ var _db;
 app.get('/api/bands', function (req, res) {
 
 	var collection = _db.collection('wvuptvshows');
+	var _bands = [];
 
 	collection.find({}, function (err, cursor) {
 
@@ -30,8 +31,24 @@ app.get('/api/bands', function (req, res) {
 			if(err) {
 				return res.send(err)
 			}
+			for (var i = 0; i < docs.length; i++) {
+				_bands.push(docs[i].band);
+			}
+			
+			var x = 0;
+	 		var y = 1;
 
-			res.send(docs)
+	 		while (y < _bands.length) {
+	 			if (_bands[y] == _bands[x]) {
+	 				_bands.splice(y, 1)
+	 			}
+	 			else {
+	 				x += 1;
+	 				y += 1;
+	 			}
+	 		}
+
+	 		res.send(_bands);
 		});
 	});
 
@@ -146,7 +163,7 @@ app.get('/api/bands/:band/albums/:album', function (req, res) {
 
 });
 
-var connString = 'mongodb://ividrine:10981iman@ds061415.mongolab.com:61415/wvuptvshows';
+var connString = 'mongodb://admin1:12345@ds061415.mongolab.com:61415/wvuptvshows';
 
 MongoClient.connect(connString, function(err, db) {
 	if(err)
