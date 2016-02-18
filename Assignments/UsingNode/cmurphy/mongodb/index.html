@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Node/Express Server</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		body {
+			background-color: #222;
+			color: #ccc;
+			font-family: 'Titillium Web', sans-serif;
+			font-size: 20px;
+		}
+		h1 {
+			font-size: 50px;
+			text-align: center;
+		}
+		a:hover {
+			color: #fff;
+		}
+		li em {
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>--- Mongo/Express/Node TV shows API ---</h1>
+		<hr/>
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<p><a href="./server">/server</a> --> displays server info</p>
+			<p><a href="./shows">/shows</a> --> shows raw data
+			<ul>
+				<li>GET /shows</li>
+				<li>GET /shows/<em>id</em></li>
+				<li>PUT /shows/<em>id</em>/<em>updated name</em></li>
+				<li>POST /shows/<em>new name</em></li>
+				<li>DELETE /shows/<em>id</em></li>
+				<li>QUERY /shows/?name=<em>name</em></li>
+				<li>QUERY /shows/?genre=<em>genre</em></li>
+			</ul>
+			</p>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</body>
+</html>

@@ -268,7 +268,7 @@ MongoClient.connect(connString, function(err, db) {
   console.log("Connected correctly to server");
 
   	// Start our app up and have it listening for requests
-	app.listen(3000, function () {
+	app.listen(3000, funwction () {
 		console.log('Our app is now listening on port: 3000');
 	});
 

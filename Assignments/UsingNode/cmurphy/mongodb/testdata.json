@@ -1,0 +1,257 @@
+{
+	series: "Stargate",
+	genre: "SciFi",
+	show: "SG1",
+	name: "episode name",
+	season: 1,
+	episode: 1,
+	releaseMonth: 1,
+	releaseDay: 1,
+	releaseYear: 2000,
+	summary: "summary for S01E01",
+	cast: [
+				"Richard Dean Anderson",
+				"Amanda Tapping",
+				"Michael Shanks",
+				"Christopher Judge"
+				]
+},
+{
+	series: "Stargate",
+	genre: "SciFi",
+	show: "Atlantis",
+	name: "episode name",
+	season: 1,
+	episode: 2,
+	releaseMonth: 2,
+	releaseDay: 2,
+	releaseYear: 2002,
+	summary: "summary for S01E02",
+	cast: 
+	[
+		"Joe Flanigan",
+		"Rachel Luttrell",
+		"David Hewlett",
+		"Jason Momoa"
+	]
+},
+{
+	series: "Stargate",
+	genre: "SciFi",
+	show: "Universe",
+	name: "episode name",
+	season: 2,
+	episode: 3,
+	releaseMonth: 5,
+	releaseDay: 4,
+	releaseYear: 2008,
+	summary: "summary for S02E03",
+	cast: 
+	[
+		"Robert Carlyle",
+		"Elyse Levesque",
+		"Brian J. Smith",
+		"David Blue",
+		"Alaina Huffman",
+		"Ming-Na Wen",
+		"Louis Ferreira"
+	]
+},
+{
+	series: "Downton Abbey",
+	genre: "Drama",
+	show: "Downton Abbey",
+	name: "episode name",
+	season: 3,
+	episode: 5,
+	releaseMonth: 8,
+	releaseDay: 23,
+	releaseYear: 2012,
+	summary: "summary for S03E05",
+	cast: 
+	[
+		"Michelle Dockery",
+		"Hugh Bonneville",
+		"Maggie Smith",
+		"Rob James-Collier"
+	]
+},
+{
+	series: "Avatar",
+	genre: "Animated",
+	show: "The Last Airbender",
+	name: "episode name",
+	season: 3,
+	episode: 10,
+	releaseMonth: 11,
+	releaseDay: 30,
+	releaseYear: 2011,
+	summary: "summary for S02E10",
+	cast: 
+	[
+		"Mae Whitman",
+		"Azh Tyler Eisen",
+		"Jack DeSena",
+		"Dante Basco"
+	]
+},
+{
+	series: "Avatar",
+	genre: "Animated",
+	show: "The Legend of Korra",
+	name: "episode name",
+	season: 4,
+	episode: 8,
+	releaseMonth: 9,
+	releaseDay: 13,
+	releaseYear: 2014,
+	summary: "summary for S04E08",
+	cast: 
+	[
+		"Janet Varney",
+		"David Faustino",
+		"P.J. Byrne",
+		"Seychelle Gabriel"
+	]
+},
+{
+	series: "Game of Thrones",
+	genre: "Fantasy",
+	show: "Game of Thrones",
+	name: "episode name",
+	season: 2,
+	episode: 6,
+	releaseMonth: 5,
+	releaseDay: 22,
+	releaseYear: 1999,
+	summary: "summary of S02E06",
+	cast: 
+	[
+		"Emilia Clarke",
+		"Kit Harrington",
+		"Maisie Williams",
+		"Peter Dinklage",
+		"Lena Headley"
+	]
+},
+{
+	series: "Spartacus",
+	genre: "Action",
+	show: "Blood and Sand",
+	name: "episode name",
+	season: 1,
+	episode: 4,
+	releaseMonth: 5,
+	releaseDay: 6,
+	releaseYear: 2010,
+	summary: "summary of S01E04",
+	cast: 
+	[
+		"Liam McIntyre",
+		"Manu Bennett",
+		"Lucy Lawless",
+		"Peter Mensah",
+		"John Hannah"
+	]
+},
+{
+	series: "Spartacus",
+	genre: "Action",
+	show: "Gods of the Arena",
+	name: "episode name",
+	season: 1,
+	episode: 7,
+	releaseMonth: 8,
+	releaseDay: 26,
+	releaseYear: 2009,
+	summary: "summary of S01E07",
+	cast: 
+	[
+		"John Hannah",
+		"Manu Bennet",
+		"Peter Mensah",
+		"Dustin Clare",
+		"Lucy Lawless"
+	]
+},
+{
+	series: "The Big Bang Theory",
+	genre: "Comedy",
+	show: "The Big Bang Theory",
+	name: "episode name",
+	season: 6,
+	episode: 3,
+	releaseMonth: 7,
+	releaseDay: 11,
+	releaseYear: 2015,
+	summary: "summary of S06E03",
+	cast: 
+	[
+		"Kaley Cuoco",
+		"Jim Parsons",
+		"Johnny Galecki",
+		"Kunal Nayyar",
+		"Simon Helberg"
+	]
+},
+{
+	series: "Firefly",
+	genre: "SciFi",
+	show: "Firefly",
+	name: "episode name",
+	season: 1,
+	episode: 8,
+	releaseMonth: 3,
+	releaseDay: 16,
+	releaseYear: 2005,
+	summary: "summary of S01E08",
+	cast: 
+	[
+		"Nathan Fillion",
+		"Summer Glau",
+		"Alan Tudyk",
+		"Jewel Staite",
+		"Morena Baccarin",
+		"Gina Torres",
+		"Sean Maher"
+	]
+},
+{
+	series: "Star Trek",
+	genre: "SciFi",
+	show: "The Original Series",
+	name: "episode name",
+	season: 2,
+	episode: 11,
+	releaseMonth: 10,
+	releaseDay: 10,
+	releaseYear: 1962,
+	summary: "summary of S02E11",
+	cast: 
+	[
+		"William Shatner",
+		"Leonard Nimoy",
+		"Deforest Kelley"
+	]
+},
+{
+	series: "Star Trek",
+	genre: "SciFi",
+	show: "The Next Generation",
+	name: "episode name",
+	season: 6,
+	episode: 19,
+	releaseMonth: 2,
+	releaseDay: 2,
+	releaseYear: 1997,
+	summary: "summary of S06E19",
+	cast: 
+	[
+		"Patick Stewart",
+		"Jonathan Frakes",
+		"Brent Spiner",
+		"Michael Dorn",
+		"Gates McFadden",
+		"Marina Sirtis"
+	]
+},
