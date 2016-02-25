@@ -18,9 +18,9 @@ var MongoClient = mongodb.MongoClient;
 app.use(bodyParser.json());
 
 // Our very first route
-app.get('/', function (req, res) {
-	res.send('Hello World');
-});
+// app.get('/', function (req, res) {
+// 	res.send('Hello World');
+// });
 
 app.get('/test', function (req, res) {
 	res.send('You hit test');
@@ -257,6 +257,9 @@ app.get('/api/tvshows/genre/:genre', function(req, res) {
 	});
 });
 
+// Expose out a folder called public
+app.use(express.static('public'));
+
 // Connection URL
 var connString = 'mongodb://afreeland:testing@ds061385.mongolab.com:61385/wvup_shows';
 
@@ -268,7 +271,7 @@ MongoClient.connect(connString, function(err, db) {
   console.log("Connected correctly to server");
 
   	// Start our app up and have it listening for requests
-	app.listen(3000, funwction () {
+	app.listen(3000, function () {
 		console.log('Our app is now listening on port: 3000');
 	});
 
