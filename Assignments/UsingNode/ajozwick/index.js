@@ -31,7 +31,7 @@ MongoClient.connect(url, function (err,db) {
 var _db;
 
 // MONGODB: Listing all the data in tele_show collection
-app.get('/', function (req,res) {
+app.get('/teleShows', function (req,res) {
 	var collection = _db.collection('tele_show');
 	collection.find({}, function (err, cursor) {
 		if (err) 
@@ -98,6 +98,73 @@ app.get('/teleShows/genre/:genre', function (req, res) {
 
 });
 
+app.post('/teleShows', function (req,res) {
+	var _body = req.body;
+
+	if(Object.keys(_body).length == 0)
+		return res.send("We need some keys here for body!");
+
+	var collection = _db.collection('tele_show');
+
+	collection.insert(_body, function (err,docs) {
+
+		if(err)
+			return res.send(err);
+		res.send(docs);
+	});
+});
+
+//This is the middle man before moving on to the patches
+function parseID (req, res, next) { //next allows you to continue along
+	var _id
+	try{
+		_id = mongodb.ObjectID(req.params.id);
+	}
+	catch(err) {
+		res.send('Error parsing: ' + err);
+		return;
+	}
+	req._id = _id; //This makes the id that was converted available for the patches because otherwise it would be private here. 
+	next();
+}
+
+//patch
+app.put('/teleShows/:id', parseID, function (req,res) {
+	var query = {
+		 _id:req._id //this tells mongodb what query that you are looking for the id 
+
+		//_id: mongodb.ObjectID(req.params.id)
+	};
+
+	var collection = _db.collection('tele_show');
+	collection.update(
+		//Our query object
+		query,
+		//Our update document
+		req.body,
+		//Options
+		{},
+
+		function (err,status) {
+			if(err)
+				res.send(err);
+			res.json(status);
+		}
+		)
+
+});
+
+// /teleShows/:id?tags=sample.test.whatever.tags.you.want
+function tag_it (req,res,next) {
+	var _tags = req.query.tags;
+
+	if (!_tags) 
+		return next();
+
+	var arrTags = _tags.split(',');
+	req.tags = arrTags;
+	next();
+}
 
 
 // end 
