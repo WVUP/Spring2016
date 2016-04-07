@@ -1,0 +1,21 @@
+.navbar-default {
+    background-color: #1f2b36;   
+}
+
+.navbar {
+	margin:0;
+    margin-bottom: -5px;
+    border-bottom: 10px solid rgba(31,43,54,0.3);
+    z-index: 555555;
+}
+
+.border-medium {
+	
+	
+}
+
+.navbar-brand, .navbar-brand a {
+	font-family: "Bevan", "Helvetica", serif;
+	font-size: 65px;
+	color:#df2d3b !important;
+}
