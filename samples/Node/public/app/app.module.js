@@ -15,9 +15,89 @@ sampleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
 			url: '/about',
 			templateUrl: 'app/components/about_me/about.html',
 			controller: 'aboutCtrl'
+		})
+		.state('show', {
+			url: '/shows/:showID',
+			template: '<h1> {{show.name}}</h1>',
+			controller: function($scope, $stateParams, $DataService) {
+				$scope.test = 'yo momma';
+				console.log($stateParams);
+
+				$scope.show = null;
+
+				var dialog = bootbox.alert("Loading Movie...");
+
+				$DataService.shows.findOne($stateParams.showID)
+					.success(function(resp) {
+						console.log(resp);
+						$scope.show = resp;
+					})
+					.error(function(err) {
+						console.error(err);
+					})
+					.finally(function() {
+						setTimeout(function() {
+							dialog.modal('hide');
+						}, 1000);
+						
+					});
+
+			}
 		});
 
 }]);
+
+
+// sampleApp.service('Repo', [function(){
+
+// 	var k = 'private';
+// 	this.test = 'Hello';
+
+// }]);
+
+
+sampleApp.factory('$DataService', ['$http', function($http){
+	var k = 'private';
+	var test = 'Hello';
+
+
+	return {
+		display: test,
+		test: test,
+		shows: {
+			find: function() {
+				return $http.get('/api/tvshows');
+			},
+
+			findOne: function(_id) {
+				return $http.get('/api/tvshows/' + _id);
+			}
+		}
+	};
+}]);
+
+
+sampleApp.directive('rowPreview', [function() {
+	return {
+		restrict: 'A',
+		scope: {
+			label: '@',
+			shows: '='
+		},
+		template: 
+			'<div class="row">' +
+				'<div class="col-md-2 leading-box box">{{label}}</div>' +
+				'<div class="col-md-2 box" ng-repeat="s in shows">' +
+					'{{s.title}}' +
+					'<img src="{{s.src}}"  alt="{{s.title}}"/>' + 
+				'</div>' +
+			'</div>',
+		link: function(scope, iElement, iAttrs) {
+			// body...
+		}
+	};
+}]);
+
 
 sampleApp.directive('socialBar', [function () {
 	return {
@@ -56,4 +136,4 @@ sampleApp.directive('socialBar', [function () {
 			}
 		}
 	};
-}])
+}]);
