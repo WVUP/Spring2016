@@ -1,4 +1,27 @@
-<social-bar sample="custom_includes" label="Dev Section"></social-bar>
+<!--Styles for movies frame row. This can be moved to the home.html for front page viewing.-->
+<style>
+.first-box {
+	background-color:#826f60;
+	height:180px;
+	width:280px;
+
+}
+.box {
+	text-align: center;
+}
+.list-label {
+	color:#fff;
+	font-family: Fjalla One, Helvetica, sans-serif;
+	font-size:60px;
+}
+</style>
+
+<!-- Row using the directive 'genreRow' that will display the genres array in the controller -->
+<div data-genre-row label="Genres" shows="tShows"></div><!-- label 'Genres' will be inserted in the directive template 'genreRow' where it's called -->
+
+<!-- Row using the directive 'genreRow' that will display the dataservice -->
+<div data-genre-row label="Row 2" shows="async_shows"></div><!-- label "ASYNC" will be inserted where it's called in the directive template 'genreRow'-->
+
 
 <h2>You made it!!!</h2>
 
