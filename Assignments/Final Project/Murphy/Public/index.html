@@ -1,0 +1,72 @@
+<html ng-app="tvApp">
+<head>
+	<title>Prime TV</title>
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Bevan|Pontano+Sans|Fjalla+One|Cantarell' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+	<!-- Custom Angular -->
+	<script src="app/app.module.js"></script>
+	<script src="app/components/home/home_ctrl.js"></script>
+</head>
+<body>
+	<div class="container">
+		
+		<!--Header-->
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<span class="title">Prime</span>
+					<span class="sub"> TV Shows</span>
+				</a>
+			</div>
+
+			<ul class="navbar-right" style="margin-top: 25px;">
+				<li class="navbar-left dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+					Browse <i class="fa fa-angle-down"></i></a>
+					<ul class="dropdown-menu">
+            <li><a href="#">Genres</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Recent</a></li>
+          </ul>
+				</li>
+				<form class="nav navbar-right search" action="http://google.com/search" target="blank">
+				<fieldset>
+					<input type="hidden" name="q" value="site:">
+					<input class = "form-text" name="q" placeholder="search TV shows..." onfocus="this.placeholder = ''" onblur="this.placeholder='search TV shows...'">
+					<button type="submit"	 class="btn btn-trans fa">
+						<i class="fa fa-search"></i>
+					</button>
+					</input>
+				</fieldset>
+			</form>
+			</ul>
+		</nav>
+		
+		<!--Angular Dynamic Content-->
+		<ui-view></ui-view>
+
+		<!--Footer-->
+		<div class="footer">
+			<div class="col-md-4">
+				<a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+				<a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
+			</div>
+			<div class="col-md-6"></div>
+			<div class="col-md-2 copyright">&copy; Spring 2016</div>
+		</div>
+
+	</div>
+</body>
+</html>

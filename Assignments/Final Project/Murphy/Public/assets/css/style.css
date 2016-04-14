@@ -1,0 +1,151 @@
+/*
+	font-family: 'Bevan', cursive;
+	font-family: 'Pontano Sans', sans-serif;
+	font-family: 'Fjalla One', sans-serif;
+	font-family: 'Cantarell', sans-serif;
+
+	header:
+ 		bluish: #1f2b36
+   	reddish: #df2d3b
+ 		tannish: #e8dcc5
+ 	body:	#e8dcc5 
+ 	row headings (Genres): #826f60
+*/
+
+* {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+body {
+	background-color: #878787;
+	color: #ffffff;
+}
+
+.container {
+
+}
+
+/* Navbar */
+.navbar-default {
+	background-color: #1f2b36;
+}
+
+.navbar {
+	z-index: 999;
+	margin-bottom: -5px;
+	box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.75);
+  border-style: none;
+  height: 10%;
+  color: #e8dcc5;
+}
+
+.navbar a {
+	margin: 10px;
+	font-family: 'Pontano', 'Helvetica', sans-serif;
+	color: #df2d3b;
+}
+
+.navbar .title {
+	color: #df2d3b;
+	font-family: "Bevan", "Helvetica", serif;
+	font-size: 45px;
+}
+
+.navbar .sub {
+	font-size: 35px;
+	color: #e8dcc5;
+}
+
+.dropdown {
+	margin-right: 30px;
+	font-size: 20px;
+}
+
+.dropdown a {
+	text-decoration: none;
+}
+	/*search*/
+
+	.search {
+		margin-right: 30px;
+	}
+
+	.form-text {
+		border-radius: 3px;
+		background: none;
+		border-style: solid;
+		border-width: 1px;
+		font-size: 19px;
+		padding-left: 5px;
+	}
+
+	.btn-trans {
+		background-color: rgba(0,0,0,0.3);
+		margin-top: -4px;
+	}
+
+	.btn-trans:hover {
+		color: #ffffff;
+		border-color: #e8dcc5;
+	}
+
+/* Dynamic Content */
+.content {
+	background-color: #e8dcc5;
+	padding: 10px;
+}
+
+.row {
+	margin-right: -10px;
+	margin-bottom: 10px;
+}
+
+.previewBars {
+	background-color:rgba(0,0,0,0.4);
+	padding-top: 10px;
+	padding-right: 0px;
+	border-top: 1px solid;
+	margin-left: 5%;
+}
+
+.leading-box {
+	padding-top: 5%;
+	padding-left: 5%;
+	text-align: center;
+	color: #ffffff;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.leading-box a {
+	color: #df2d3b;
+	text-decoration: none;
+	font-family: 'Cantarell', sans-serif;
+}
+
+.pics {
+
+}
+
+.pics img {
+	border: 1px solid white;
+	height: 150px;
+	width: 170px;
+}
+
+/* Footer */
+.footer {
+	background-color: #1f2b36;
+	padding: 30px;
+	color: #e8dcc5;
+}
+
+.footer i {
+	padding-left: 15px;
+	font-size: 25px;
+}
+
+.footer a {
+	color: #e8dcc5;
+}
