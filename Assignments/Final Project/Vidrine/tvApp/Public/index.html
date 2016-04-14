@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="index.css">
 	<link href='https://fonts.googleapis.com/css?family=Bevan|Pontano+Sans|Fjalla+One|Cantarell' rel='stylesheet' type='text/css'>
-		<!--Jquery CDN -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<!-- Bootstrap Css -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<!--Jquery CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<!--Bootstrap JS -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- Angular CDN -->
@@ -20,20 +21,33 @@
 <body>
 
 	<div class="container">
+		
 
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      
-		        <h1>Prime</h1> <h2>Tv Shows<h2>
-		      
-		    </div>
-		  </div>
-		</nav>
+		<div class="navbar">
+
+			<div class="name">
+				<h1>Prime</h1> <h2>TV Shows<h2>
+			</div>
+
+			<div class="find">
+
+				<div class="browse">
+					<p>Browse</p>
+					<p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+				</div>
+
+				<div class="search">
+					<p><i class="fa fa-search"></i></p>
+					<form class="search">
+						<input id="search" type="text" placeholder="search">
+					</form>
+				</div>
+
+			</div>
+
+		</div>
 
 		<ui-view> </ui-view>
-
-
 
 	</div>
 
