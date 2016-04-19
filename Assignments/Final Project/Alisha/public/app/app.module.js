@@ -25,7 +25,7 @@ sampleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
 
 				$scope.show = null;
 
-				// Using the 'DataService' service below and the objects 'shows' and 'findOne' using the route called 'teleShowsID.'
+				// Using the 'DataService' service below and the objects 'shows' and 'findOne' using the route called 'teleShowID.'
 				// It knows it needs to be the appropriate _id from the database because of the below service 'findOne' function.
 				// So if it's a legitimate _id, it will respond using the 'success' function.
 				$DataService.shows.findOne($stateParams.teleShowsID)
@@ -51,7 +51,11 @@ sampleApp.factory('$DataService', ['$http', function($http) {
 				return $http.get('/teleshows');
 			},
 			findOne: function(_id) {
-				return $http.get('/teleshows' + _id);
+				return $http.get('/teleshows/' + _id);
+			},
+			//tie in my node js on fetching the genre data
+			findCarousel_genre: function() {
+				return $http.get('/teleshows/genre');
 			}
 		}
 	}
@@ -66,54 +70,9 @@ sampleApp.directive('genreRow', [function () {
 			label: '@',
 			shows: '='
 		},
-	template:
-		'<div class="row">' +
-			'<div class="col-md-3 first-box box"><h1 class="list-label">{{label}}</h1></div>' +
-			'<div class="col-md-3 box" ng-repeat="s in shows">' +
-				'{{s.title}}' +
-				'<img src="{{s.src}}" alt="{{s.title}}"/>' +
-			'</div>' +
-		'</div>' +
-		'</div>',
+	template: 'app/shared_components/genreshows.html',
 
-
-// 		'<div class"well">' +
-// 			'<div id="myCarousel" class="carousel slide" data-ride="carousel">' +
- 
-//   			//Wrapper for slides
-//   			'<div class="carousel-inner" role="listbox">' +
-//     			'<div class="item active">' +
-//     				'<div class="row">' +
-//       					'<div class="col-sm-3 first-box box"><h1 class="list-label">{{label}}</h1></div> '+
-//       					'<div class="col-sm-3 box" ng-repeat="s in shows">' +
-//       						'<img src="{{s.src}}" alt="image">' +
-//       					'</div>' +
-// 					'</div>' +// /row
-// 				'</div>' +// /item active
-
-//     '<div class="item">' +
-//     	'<div class="row">' +
-//       		'<div class="col-sm-3">' +
-//       			'<img src="http://placehold.it/280x180" alt="image">' +
-//       		'</div>' +
-//       		'<div class="carousel-caption">...' +
-        		
-//       		'</div>' + // /col-sm-3 --> 
-//     	'</div>' + ///row -->
-//     '</div'> ... + ///item -->
-    
-//   '</div>' + ///carousel-inner -->
-
-//   // <!-- Controls -->
-//   // <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-//   //   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-//   //   <span class="sr-only">Next</span>
-//   // </a><!--/controls-->
-
-// '</div>' + ///myCarousel-->
-// '</div>', ///well-->
-	link: function (scope, iElement, iAttrs) {
-		}
+	
 	};
 }]);
 

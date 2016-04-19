@@ -48,6 +48,23 @@ app.get('/teleShows', function (req,res) {
 
 }); //end app.get
 
+//Returns a list of the genres
+app.get('/teleShows/genre', function (req,res) {
+	var collection = _db.collection('tele_show');
+	collection.find({'carousel_genre':1}, function (err, cursor) {
+		if (err) 
+			return res.send(err);
+		
+
+		cursor.toArray(function (err,docs) {
+			if (err) 
+				return res.send(err);
+			res.send(docs);
+			
+		});// end cursor.toArray
+	}); // end collection.find
+
+}); //end app.get
 
 // Listing data based on the ID parameter
 app.get('/teleShows/:id', function (req,res) {
