@@ -16,14 +16,15 @@ sampleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
 			templateUrl: 'app/components/about_me/about.html',
 			controller: 'aboutCtrl'
 		})
-		.state('show', {
-			url: '/shows/:teleShowsID',
-			template: '<h1>{{show.title}}</h1>',
+		.state('tv', {
+			url: '/tv/:teleShowsID',
+			template: '<h1>{{shows.tv.title}}</h1>' +
+			'{{test}}',
 			controller: function ($scope, $stateParams, $DataService) {
 				$scope.test = 'why hello gorgeous';
 				console.log($stateParams);
 
-				$scope.show = null;
+				$scope.tv = null;
 
 				// Using the 'DataService' service below and the objects 'shows' and 'findOne' using the route called 'teleShowID.'
 				// It knows it needs to be the appropriate _id from the database because of the below service 'findOne' function.
@@ -31,9 +32,21 @@ sampleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
 				$DataService.shows.findOne($stateParams.teleShowsID)
 					.success (function(resp) {
 						console.log(resp);
-						$scope.show = resp;
+						$scope.tv = resp.map(function (r) {
+							return {
+								title = r.title
+							}
+						});
 					});
 				}
+		})
+		.state('genres', {
+			url:'/browse_genre',
+			template: '<h1>{{name}}</h1>' +
+			'<div ng-repeat="s in shows"></div>' +
+			'<img src={{s.url}}>' +
+			'<div data-genre-row label="Genres" shows="genres"></div>',
+			controller: 'homeCtrl'
 		});
 
 }]);
@@ -55,14 +68,22 @@ sampleApp.factory('$DataService', ['$http', function($http) {
 			},
 			//tie in my node js on fetching the genre data
 			findCarousel_genre: function() {
-				return $http.get('/teleshows/genre');
+				return $http.get('/teleshows/genre/');
+			},
+			// popular shows
+			findPopular: function() {
+				return $http.get('/teleshows/popular/');
+			},
+			// recently added shows
+			findRecent: function() {
+				return $http.get('/teleshows/recently-added/');
 			}
 		}
 	}
 }]);
 //In the template, 'dataservice.test' should give you 'Hello"'
 
-//Widget
+//Widget for the front page "Genres"
 sampleApp.directive('genreRow', [function () {
 	return {
 		restrict: 'A',
@@ -70,9 +91,59 @@ sampleApp.directive('genreRow', [function () {
 			label: '@',
 			shows: '='
 		},
-	template: 'app/shared_components/genreshows.html',
-
+	template: 
+	'<div class="row">' +
+		'<div class="col-sm-2 first-box">' +
+			'<h1 class="list-label">{{label}}</h1>' +
+		'</div>' +
+		'<div class="col-sm-2" ng-repeat="s in shows">' +
+			'<img src={{s.url}}>' +
+		'</div>' +
+	'</div>',
 	
+	link: function (scope, iElement, iAttrs) {
+		}
+			
 	};
 }]);
+
+// Widget for the front page Popular row
+sampleApp.directive('popularRow', [function() {
+	return {
+		restrict: 'A',
+		scope: {
+			label: '@',
+			shows: '='
+		},
+		template: 
+		'<div class="row">' +
+			'<div class="col-sm-2 first-box"><h1 class="list-label">{{label}}</h1></div>' +
+			'<div class="col-sm-2" ng-repeat="s in shows">' +
+				'<img src={{s.url}}>' +
+			'</div>' +
+		'</div>',
+		link: function (scope, iElement, iAttrs) {
+		}
+	};
+
+}]);
+
+// Widget for the front page Recently Added row
+sampleApp.directive('recentRow', [function() {
+	return {
+		restrict: 'A',
+		scope: {
+			label: '@',
+			shows: '='
+		},
+		template: 
+		'<div class="row">' +
+			'<div class="col-sm-2 first-box"><h1 class="list-label">{{label}}</h1></div>' +
+			'<div class="col-sm-2" ng-repeat="s in shows">' +
+				'<img src={{s.url_new}}>' +
+			'</div>' +
+		'</div>',
+	}
+}]);
+
 

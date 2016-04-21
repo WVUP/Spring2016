@@ -1,4 +1,23 @@
-<!-- Feature Slideshow Section -->
+<!--Styles for movies frame row. This can be moved to the home.html for front page viewing.-->
+<style>
+.first-box {
+  background-color:#826f60;
+  height:180px;
+  
+
+}
+.box {
+  text-align: center;
+}
+.list-label {
+  color:#fff;
+  font-family: Fjalla One, Helvetica, sans-serif;
+  font-size:60px;
+}
+</style>
+
+<!-- Front Page Feature Slideshow -->
+<div class="row"
 <div class="feature">
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -37,6 +56,12 @@
 </div>
 
 </div><!-- /Feature Slideshow -->
+
+</div><!-- /row -->
+
+<div data-genre-row label="Genres" shows="genres"></div>
+<div data-popular-row label="Most Popular" shows="populars"></div>
+<div data-recent-row label="Recently Added" shows="recent"></div>
 
 <!-- ************* 
 Genre Carousel Directive

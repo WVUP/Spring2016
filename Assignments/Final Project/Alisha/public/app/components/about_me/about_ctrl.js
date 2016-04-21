@@ -50,7 +50,7 @@ sampleApp.controller('aboutCtrl', ['$scope', '$DataService', function ($scope, $
 
 // Grabs data from my tele_show database and logs twice in the console. This data is inserted into the row (runs in console)in the about html file. 
 $scope.async_shows = [];
-$scope.genres = [];
+
 
 var k = $DataService.display;
 
@@ -68,20 +68,6 @@ $DataService.shows.find()
 		console.log($scope.async_shows);
 	});
 
-//Set my controller to use dataservice and grab the genres from my database
-$DataService.shows.findCarousel_genre()
-	.success(function (resp) {
-		
-		console.log(resp);
-		$scope.genres = resp.map(function (r) {
-				return {
-					genre: r.genre,
-					title: r.title
-				};
-			})
 
-		console.log($scope.genres);
-
-	});
 
 }]);
