@@ -1,0 +1,57 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Add a Show</h2>
+    <form action="/api/post" method="POST" role="form">
+
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="series">series</label>
+            <input type="text" name="series" id="username" class="form-control" ng-model="series" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.genre.$dirty && form.genre.$error.required }">
+            <label for="genre">Genre</label>
+            <input type="text" name="genre" id="username" class="form-control" ng-model="genre" required />
+            <span ng-show="form.genre.$dirty && form.genre.$error.required" class="help-block">Genre is required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.episode.$dirty && form.episode.$error.required }">
+            <label for="episode">Episode</label>
+            <input type="text" name="episode" id="username" class="form-control" ng-model="episode" required />
+            <span ng-show="form.episode.$dirty && form.episode.$error.required" class="help-block">Episode is required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="username" class="form-control" ng-model="name" required />
+            <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Name is required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.summary.$dirty && form.summary.$error.required }">
+            <label for="summary">Summary</label>
+            <input type="text" name="summary" id="username" class="form-control" ng-model="summary" required />
+            <span ng-show="form.summary.$dirty && form.summary.$error.required" class="help-block">Summary is required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.url.$dirty && form.url.$error.required }">
+            <label for="url">Image Url</label>
+            <input type="text" name="url" id="password" class="form-control" ng-model="url" required />
+            <span ng-show="form.url.$dirty && form.url.$error.required" class="help-block">Url is definitely required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.popular.$dirty && form.popular.$error.required }">
+            <label for="popular">Popular (enter yes or no)</label>
+            <input type="text" name="popular" id="username" class="form-control" ng-model="popular" required />
+            <span ng-show="form.popular.$dirty && form.popular.$error.required" class="help-block">Popular is required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.recent.$dirty && form.recent.$error.required }">
+            <label for="recent">Recent (enter yes or no)</label>
+            <input type="text" name="recent" id="username" class="form-control" ng-model="recent" required />
+            <span ng-show="form.recent.$dirty && form.recent.$error.required" class="help-block">Username is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+            
+        </div>
+    </form>
+</div>

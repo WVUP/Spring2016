@@ -1,4 +1,8 @@
-tvApp.controller('homeCtrl', ['$scope', '$DataService', function ($scope, $DataService) {
+tvApp.controller('homeCtrl', ['$scope', '$DataService', '$rootScope', function ($scope, $DataService, $rootScope) {
+
+	$(document).ready(function() {
+		$(".container").css("background-color", "#e8dcc5");
+	})
 
 	$scope.tv_shows = [];
 
@@ -32,6 +36,7 @@ tvApp.controller('homeCtrl', ['$scope', '$DataService', function ($scope, $DataS
 		})
 		.error (function (err) {
 			console.error(err);
+			console.log("NOPPEEEEEEE");
 		})
 
 	$DataService.shows.findPopular()
@@ -49,6 +54,7 @@ tvApp.controller('homeCtrl', ['$scope', '$DataService', function ($scope, $DataS
 		})
 		.error (function (err) {
 			console.error(err);
+			console.log("NOPPEEEEEEE");
 		})
 
 	$DataService.shows.findRecent()
@@ -66,5 +72,6 @@ tvApp.controller('homeCtrl', ['$scope', '$DataService', function ($scope, $DataS
 		})
 		.error (function (err) {
 			console.error(err);
+			console.log("NOPPEEEEEEE");
 		})
 }])

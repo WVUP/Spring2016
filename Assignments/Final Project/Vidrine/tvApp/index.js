@@ -10,9 +10,33 @@ var _db;
 
 var mongoClient = mongodb.MongoClient;
 
+app.use(bodyParser.json());
+
 var connString = 'mongodb://admin1:12345@ds061415.mlab.com:61415/wvuptvshows';
 
-app.get('/preview', function (req, res) {
+app.get('/api/all', function (req, res) {
+
+	var collection = _db.collection('tvshows');
+
+	collection.find({}, function (err, cursor) {
+
+		if (err)
+			return res.send(err);
+
+		cursor.toArray(function(err, doc) {
+
+			if (err)
+				return res.send(err);
+
+			res.send(doc);
+
+		});
+
+	});
+
+});
+
+app.get('/api/preview', function (req, res) {
 
 	var collection = _db.collection('tvshows');
 
@@ -34,7 +58,7 @@ app.get('/preview', function (req, res) {
 
 });
 
-app.get('/popular', function (req, res) {
+app.get('/api/popular', function (req, res) {
 
 	var collection = _db.collection('tvshows');
 
@@ -56,7 +80,7 @@ app.get('/popular', function (req, res) {
 
 })
 
-app.get('/recent', function (req, res) {
+app.get('/api/recent', function (req, res) {
 
 	var collection = _db.collection('tvshows');
 
@@ -76,6 +100,11 @@ app.get('/recent', function (req, res) {
 
 	});
 
+})
+
+app.post('/api/post', function (req, res) {
+
+	console.log(req.body);
 })
 
 
