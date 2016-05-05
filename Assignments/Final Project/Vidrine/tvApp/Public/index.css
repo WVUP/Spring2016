@@ -17,16 +17,16 @@ body {
 }
 
 .navbar {
-	height: 70px;
+	height: 85px;
 	width: 100%;
-	border-radius: 0px;
+	border-radius: 5px;
 	background-color: #1a1a1a;
 	-webkit-box-shadow: 0 20px 5px -7px #4d4d4d;
 
 }
 
 .name {
-	margin-left: 20px;
+	margin-left: 30px;
 	display: inline-block;
 	transition: opacity .25s ease-in-out;
    -moz-transition: opacity .25s ease-in-out;
@@ -65,8 +65,17 @@ body {
 	color: #d9d9d9;
 
 }
-
+.browse {
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+.browse:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
 .browse p {
+	font-size: 15px;
 	display: inline-block;
 	font-family: 'Cantarell', sans-serif;
 }
@@ -96,23 +105,36 @@ body {
 
 }
 
-.leading-box {
-	height: 200px;
-	background-color: #826f60;
-	padding: 50px;
-	margin: 10px 70px 0px 15px;
+.header {
+	border-radius: 5px;
+	width: 100%;
+	height: 150px;
+	background-color: #800000;
+	opacity: 0.7;
+	text-align: center;
+	margin: 40px 0px 40px 0px;
 
 }
 
 #h1 {
+	text-align: center;
 	color: ghostwhite;
 	font-family: 'Fjalla One', sans-serif;
 	font-size: 40px;
-	padding-left: 20px;
+	padding-top: 40px;
+	text-shadow: 5px 5px 5px #000000;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+#h1:hover {
+	opacity: 0.7;
+	cursor: pointer;
 }
 
 #seeMore {
-	color: #800000;
+	color: ghostwhite;
 	font-family: 'Cantarell', sans-serif;
 	padding-left: 20px;
 }
@@ -123,12 +145,23 @@ body {
 	width: 200px;
 	margin: 40px;
 	position: relative;
+	box-shadow: 30px 10px 10px gray;
+	transition: opacity .55s ease-in-out;
+   -moz-transition: opacity .55s ease-in-out;
+   -webkit-transition: opacity .55s ease-in-out;
+}
+
+.box:hover {
+	opacity: 0.5;
+	cursor: pointer;
 }
 
 .row {
-	overflow-x: scroll;
+	position: relative;
+	left: 60px;
+	width: 1000px;
+	overflow: auto;
 	white-space: nowrap;
-  	overflow-x: scroll;
 }
 
 .row .box {
@@ -159,6 +192,7 @@ body {
 }
 
 .extra {
+	border-radius: 5px;
 	text-align: center;
 	width: 100%;
 	background-color: white;
@@ -187,6 +221,63 @@ body {
 	opacity: 0.5;
 	cursor: pointer;
 
+}
+
+.showContent {
+	margin: 50px 0px 0px 50px;
+}
+
+.showContent h1{
+	font-family: 'Fjalla One', sans-serif;
+	padding: 0px;
+}
+
+.showContent h2{
+	font-family: 'Cantarell', sans-serif;
+}
+.showContent p{
+	width: 60%;
+	font-family: 'Pontano Sans', sans-serif;
+}
+
+.showFrame {
+	margin-top: 20px;
+}
+
+.specs {
+	position: relative;
+	top: 30px;
+	left: 30px;
+	font-size: 15px;
+	display:inline-block;
+}
+
+.dImage {
+	margin-top: 0px;
+}
+
+.about {
+	display: inline-block;
+	position: relative;
+	bottom: 225;
+	left: 30;
+}
+
+::-webkit-scrollbar {
+	height: 8px;
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+	background-color: ghostwhite;
+    -webkit-box-shadow: 10px 10px 10px black; 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+	background-color: black;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 10px black; 
 }
 
 .md-content {

@@ -1,0 +1,7 @@
+<h1 id="h1">Most Popular</h1>
+<div class="row">
+	<div ui-sref="show({showID:'{{s.series}}'})"class="col-md-2 box" ng-repeat="s in popularShows">
+		<p id="genre">{{s.series}}</p>
+		<img src="{{s.url}}" />
+	</div>
+</div>
