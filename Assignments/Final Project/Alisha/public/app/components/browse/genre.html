@@ -3,7 +3,7 @@
 				
 				
 				<div class="row">
-					<div class="col-md-12 col-sm-12 col-lg-12" ng-repeat="all in allGenres | orderBy:'genre' | unique: 'genre'">
+					<div class="col-md-12 col-sm-12 col-lg-12" ng-repeat="all in allGenres  | filter:globalSearch | orderBy:'genre' | unique: 'genre'">
 						<h2>{{all.genre}}</h2><a href="#/tv/{{all._id}}"><img src={{all.thumbnail}}></a>
 						<div class="pull-right panel panel-default box">
   							<div class="panel-body">
