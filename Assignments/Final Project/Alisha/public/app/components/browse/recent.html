@@ -1,0 +1,27 @@
+<div class="container">
+	<h1 class="show">Recently Added</h1>
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-lg-12 space" ng-repeat="r in recent | orderBy:'title'">
+			<h2>{{r.title}}</h2>
+			<a href="#/tv/{{r._id}}"><img src={{r.url_new}}></a>
+			<a href="#/tv/{{r._id}}"><img src={{r.url_new2}}></a>
+
+			<div class="pull-right panel panel-default box">
+  				<div class="panel-body">
+   				<b>Creators:</b>&nbsp;{{r.director}}<br />
+   				<b>Starring:</b>&nbsp;{{r.actors}}
+  				</div>
+			</div>
+			<div class="pull-right info">
+				<h3>{{r.title}}</h3>
+				<div class="rating-symbol"><img src="{{r.rated_symbol}}"></div>
+				<p>{{r.release_date}}</p>
+				<p>{{r.synopsis}}</p>
+			</div>
+				
+<hr>
+		</div>
+
+	</div>
+</div>

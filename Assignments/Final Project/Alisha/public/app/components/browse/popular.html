@@ -1,0 +1,24 @@
+<div class="container">
+	<h1 class="show">Most Popular</h1>
+	<div class="row">
+		<div "col-md-12 col-sm-12 col-lg-12" ng-repeat="p in populars | orderBy:'title' | unique:'title'">
+			<h2>{{p.title}}</h2><a href="#/tv/{{p._id}}"><img src={{p.url}}><img src={{p.url2}}></a>
+
+			<div class="pull-right panel panel-default box">
+  				<div class="panel-body">
+   				<b>Creators:</b>&nbsp;{{p.director}}{{p.directors}}<br />
+   				<b>Starring:</b>&nbsp;{{p.actors}}
+  				</div>
+			</div>
+			<div class="pull-right info">
+				<h3>{{p.title}}</h3>
+				<div class="rating-symbol"><img src="{{p.rated_symbol}}"></div>
+				<p>{{p.release_date}}</p>
+				<p>{{p.synopsis}}</p>
+			</div>
+						
+			<hr>
+
+		</div>
+	</div>
+</div>

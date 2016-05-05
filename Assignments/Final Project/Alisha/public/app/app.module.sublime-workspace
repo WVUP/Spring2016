@@ -1,0 +1,239 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"to",
+				"toArray"
+			],
+			[
+				"Mon",
+				"MongoClient"
+			],
+			[
+				"mongo",
+				"mongoClient"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"list",
+				"list-style-type"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/alishajozwick/myapp/public/app/app.module.js",
+		"/Users/alishajozwick/myapp/public/assets/libs/bootstrap-3.3.6-dist/css/bootstrap.css",
+		"/Users/alishajozwick/myapp/public/app/shared_components/genreshows.html",
+		"/Users/alishajozwick/myapp/public/app/components/home/home_ctrl.js",
+		"/Users/alishajozwick/myapp/public/app/components/home/home.html",
+		"/Users/alishajozwick/myapp/public/app/components/about_me/about_ctrl.js",
+		"/Users/alishajozwick/myapp/public/index.html",
+		"/Users/alishajozwick/myapp/public/app/components/about_me/about.html",
+		"/Users/alishajozwick/myapp/public/app/components/browse/browse_ctrl.js",
+		"/Users/alishajozwick/myapp/public/app/components/browse/browse.html",
+		"/Users/alishajozwick/myapp/public/app/components/shows/shows.html",
+		"/Users/alishajozwick/myapp/public/assets/libs/css/style.css",
+		"/Users/alishajozwick/myapp/public/assets/libs/js/script.js",
+		"/Users/alishajozwick/myapp/public/app/shared_components/genre_carousel/genre.html",
+		"/Users/alishajozwick/myapp/public/assets/libs/angular-ui-router.min.js",
+		"/Users/alishajozwick/myapp/public/assets/libs/bootstrap-3.3.6-dist/js/bootstrap.min.js",
+		"/Users/alishajozwick/myapp/public/app/components/home/home.js",
+		"/Users/alishajozwick/myapp/index.js",
+		"/Users/alishajozwick/Spring2016/Assignments/UsingNode/ajozwick/app.js",
+		"/Volumes/ALISHA/Class/node/index.js",
+		"/Users/alishajozwick/Spring2016/Assignments/UsingNode/ajozwick/index.js",
+		"/Users/alishajozwick/Desktop/final-project/game.html",
+		"/Users/alishajozwick/Desktop/final-project/js/script.js",
+		"/Users/alishajozwick/Desktop/final-project/style.css",
+		"/Volumes/ALISHA/Class/data-driven/script.js",
+		"/Volumes/ALISHA/Class/funeral/css/styles.css",
+		"/Volumes/ALISHA/Class/funeral/florists.html",
+		"/Volumes/ALISHA/Class/funeral/contact.html",
+		"/Volumes/ALISHA/Class/funeral/directions.html",
+		"/Volumes/ALISHA/Class/funeral/preplan.html",
+		"/Volumes/ALISHA/Class/funeral/racine.html",
+		"/Volumes/ALISHA/Class/funeral/pomeroy.html",
+		"/Volumes/ALISHA/Class/funeral/middleport.html",
+		"/Volumes/ALISHA/Class/funeral/index.html",
+		"/Volumes/ALISHA/Class/data-driven/index.html",
+		"/Users/alishajozwick/Desktop/funeral/preplan.html",
+		"/Users/alishajozwick/Desktop/funeral/css/styles.css",
+		"/Users/alishajozwick/Desktop/funeral/index.html",
+		"/Users/alishajozwick/Desktop/funeral/js/script.js",
+		"/Users/alishajozwick/Desktop/funeral/backpage.html",
+		"/Users/alishajozwick/Desktop/funeral/map.html",
+		"/Users/alishajozwick/Fall2015/nChannel/Alisha/index.html",
+		"/Users/alishajozwick/Desktop/funeral/bootstrap-3.3.5-dist/css/bootstrap.css",
+		"/Users/alishajozwick/Desktop/funeral/bootstrap-3.3.5-dist/css/bootstrap-theme.css"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"show",
+			"push",
+			"-->\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "app.module.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"app.mod",
+				"public/app/app.module.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

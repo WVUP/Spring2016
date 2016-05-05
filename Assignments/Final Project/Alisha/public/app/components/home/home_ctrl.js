@@ -1,30 +1,30 @@
 sampleApp.controller('homeCtrl', ['$scope','$timeout', '$DataService', function ($scope, $timeout, $DataService) {//'homeCtrl' - where the data lives
 				
-				$scope.name = 'Alisha';
-				var test = 'something'; //won't be shown because not $scoped
+				// $scope.name = 'Alisha';
+				// var test = 'something'; //won't be shown because not $scoped
 
-				$scope.colors = ['blue', 'red', 'green', 'yellow', 'orange'];
+				// $scope.colors = ['blue', 'red', 'green', 'yellow', 'orange'];
 
-				$scope.users = [
-					{
-						firstName: 'alisha',
-						lastName: 'jozwick'
-					},
-					{
-						firstName: 'adam',
-						lastName: 'jozwick'
-					}
-				];
+				// $scope.users = [
+				// 	{
+				// 		firstName: 'alisha',
+				// 		lastName: 'jozwick'
+				// 	},
+				// 	{
+				// 		firstName: 'adam',
+				// 		lastName: 'jozwick'
+				// 	}
+				// ];
 
-				$scope.show_alert = function () {
-					alert('Yes omg');
-				};
+				// $scope.show_alert = function () {
+				// 	alert('Yes omg');
+				// };
 
-				$scope.showLogo = true;
+				// $scope.showLogo = true;
 
-				$timeout(function () {
-					$scope.name = 'Jozwick';
-				}, 1000);
+				// $timeout(function () {
+				// 	$scope.name = 'Jozwick';
+				// }, 1000);
 
 
 				// Creating 'genres' and 'popular' arrays for displaying Genres row and Popular row.
@@ -42,7 +42,9 @@ sampleApp.controller('homeCtrl', ['$scope','$timeout', '$DataService', function 
 									genre: r.genre,
 									title: r.title,
 									carousel_genre: r.carousel_genre,
-									url: r.url
+									_id: r._id,
+									genre_url: r.genre_url,
+									genre_url2:r.genre_url2
 								};
 							})
 
@@ -63,7 +65,13 @@ sampleApp.controller('homeCtrl', ['$scope','$timeout', '$DataService', function 
 							return {
 								title: r.title,
 								rating: r.rating,
-								url: r.url
+								url: r.url,
+								url2: r.url2,
+								_id: r._id,
+								director:r.director,
+								synopsis:r.synopsis,
+								actors:r.actors,
+								release_date:r.release_date
 							};
 						})
 
@@ -84,7 +92,13 @@ sampleApp.controller('homeCtrl', ['$scope','$timeout', '$DataService', function 
 							return {
 								title: r.title,
 								recent: r.recent,
-								url_new: r.url_new
+								url_new: r.url_new,
+								url_new2: r.url_new2,
+								_id:r._id,
+								director:r.director,
+								synopsis:r.synopsis,
+								actors:r.actors,
+								release_date:r.release_date
 							};
 						})
 
