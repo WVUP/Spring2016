@@ -1,0 +1,18 @@
+<div ng-repeat"show in shows" class="showContent">	
+	<h1>{{show.series}}</h1>
+	<img class="dImage"src="{{show.url}}" />
+	<div class="specs">
+		<p>Episodes: {{show.episode}}</p>
+		<p><strong>Description</strong><br/>
+		{{show.description}}</p>
+		<uib-rating ng-model="rating" max="5"></uib-rating>
+	</div>
+	<hr/>
+	<h2>Episodes</h2>
+	<iframe class="showFrame" width="560" src="{{trustSrc(iframe)}}" height="315" frameborder="0" allowfullscreen></iframe>
+	<div class="about">
+		<h3>{{show.name}}</h3>
+		<p><strong>Description</strong> <br/> {{show.summary}}</p>
+	</div>
+
+</div>

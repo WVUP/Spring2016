@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offset-3">
     <h2>Add a Show</h2>
-    <form action="/api/post" method="POST" role="form">
+    <form ng-submit="createShow()" role="form">
 
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="series">series</label>

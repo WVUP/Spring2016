@@ -1,13 +1,13 @@
-<div class="col-md-2 leading-box">
-	<h1 id="h1">{{label}}</h1>
-	<p id="seeMore">See More</p>
+<div class="header">
+	<h1 ui-sref="allGenres" id="h1">{{label}}</h1>
 </div>
 
 <div class="row">
 
-	<div class="col-md-2 box" ng-repeat="s in shows">
+	<div ui-sref="show({showID:'{{s.series}}'})"class="col-md-2 box" ng-repeat="s in shows">
 		<p id="genre">{{s.genre}}</p>
 		<img src="{{s.url}}" />
 	</div>
 	
 </div>
+

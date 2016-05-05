@@ -1,0 +1,32 @@
+<div class="container">
+				<h1 class="show">Genres</h1>
+				
+				
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-lg-12" ng-repeat="all in allGenres  | filter:globalSearch | orderBy:'genre' | unique: 'genre'">
+						<h2>{{all.genre}}</h2><a href="#/tv/{{all._id}}"><img src={{all.thumbnail}}></a>
+						<div class="pull-right panel panel-default box">
+  							<div class="panel-body">
+   							 <b>Creators:</b>&nbsp;{{all.director}}{{all.directors}}<br />
+   							 <b>Starring:</b>&nbsp;{{all.actors}}
+  							</div>
+						</div>
+						<div class="pull-right info">
+							<h3>{{all.title}}</h3>
+							<div class="rating-symbol"><img src="{{all.rated_symbol}}"></div>
+							<p>{{all.release_date}}</p>
+							<p>{{all.synopsis}}</p>
+					
+					
+						</div>
+						
+						<hr>
+					</div>
+					
+
+					
+				 </div>
+</div>
+
+				
+

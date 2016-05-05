@@ -1,0 +1,9 @@
+<div class="header">
+		<h1 ui-sref="allRecent" id="h1">{{label}}</h1>
+</div>
+
+<div class="row">
+	<div ui-sref="show({showID:'{{s.series}}'})" class="col-md-2 box" ng-repeat="s in shows">
+		<img src="{{s.url}}" />
+	</div>
+</div>

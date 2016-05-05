@@ -149,3 +149,10 @@ body {
 .footer a {
 	color: #e8dcc5;
 }
+
+#genre
+{
+	
+	margin-left: 10px;
+	font-size: 15px;
+}

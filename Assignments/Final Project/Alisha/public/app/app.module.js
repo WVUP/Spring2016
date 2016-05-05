@@ -1,4 +1,4 @@
-var sampleApp = angular.module('sampleApp', ['ui.router']);
+var sampleApp = angular.module('sampleApp', ['ui.router','angular.filter']);
 
 
 sampleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
@@ -11,15 +11,11 @@ sampleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
 			templateUrl: 'app/components/home/home.html',
 			controller: 'homeCtrl'
 		})
-		.state('aboutMe', {
-			url: '/about',
-			templateUrl: 'app/components/about_me/about.html',
-			controller: 'aboutCtrl'
-		})
+
 		.state('tv', {
 			url: '/tv/:teleShowsID',
-			template: '<h1>{{shows.tv.title}}</h1>' +
-			'{{test}}',
+			templateUrl: 'app/components/shows/shows.html', 
+			
 			controller: function ($scope, $stateParams, $DataService) {
 				$scope.test = 'why hello gorgeous';
 				console.log($stateParams);
@@ -32,22 +28,31 @@ sampleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
 				$DataService.shows.findOne($stateParams.teleShowsID)
 					.success (function(resp) {
 						console.log(resp);
-						$scope.tv = resp.map(function (r) {
-							return {
-								title = r.title
-							}
-						});
+						$scope.tv = resp;
+
+						if (tv.rating == 5) {
+			return res.send('.star-rating .fa');
+		};
+						
 					});
 				}
 		})
-		.state('genres', {
-			url:'/browse_genre',
-			template: '<h1>{{name}}</h1>' +
-			'<div ng-repeat="s in shows"></div>' +
-			'<img src={{s.url}}>' +
-			'<div data-genre-row label="Genres" shows="genres"></div>',
+		.state('browsegenres', {
+			url:'/browsegenres',
+			templateUrl: 'app/components/browse/genre.html',
+			controller: 'browseCtrl'
+		})
+
+		.state('browsepopular', {
+			url:'/browsepopular',
+			templateUrl: 'app/components/browse/popular.html',
 			controller: 'homeCtrl'
-		});
+		})
+		.state('browserecent', {
+			url:'/browserecent',
+			templateUrl: 'app/components/browse/recent.html',
+			controller:'homeCtrl'
+		})
 
 }]);
 
@@ -77,11 +82,13 @@ sampleApp.factory('$DataService', ['$http', function($http) {
 			// recently added shows
 			findRecent: function() {
 				return $http.get('/teleshows/recently-added/');
+			},
+			findGenre: function() {
+				return $http.get('/teleShows/browseGenre');
 			}
 		}
 	}
 }]);
-//In the template, 'dataservice.test' should give you 'Hello"'
 
 //Widget for the front page "Genres"
 sampleApp.directive('genreRow', [function () {
@@ -91,15 +98,7 @@ sampleApp.directive('genreRow', [function () {
 			label: '@',
 			shows: '='
 		},
-	template: 
-	'<div class="row">' +
-		'<div class="col-sm-2 first-box">' +
-			'<h1 class="list-label">{{label}}</h1>' +
-		'</div>' +
-		'<div class="col-sm-2" ng-repeat="s in shows">' +
-			'<img src={{s.url}}>' +
-		'</div>' +
-	'</div>',
+	templateUrl: 'app/shared_components/browsegenres.html',
 	
 	link: function (scope, iElement, iAttrs) {
 		}
@@ -115,13 +114,7 @@ sampleApp.directive('popularRow', [function() {
 			label: '@',
 			shows: '='
 		},
-		template: 
-		'<div class="row">' +
-			'<div class="col-sm-2 first-box"><h1 class="list-label">{{label}}</h1></div>' +
-			'<div class="col-sm-2" ng-repeat="s in shows">' +
-				'<img src={{s.url}}>' +
-			'</div>' +
-		'</div>',
+		templateUrl:'app/shared_components/browsepopular.html',
 		link: function (scope, iElement, iAttrs) {
 		}
 	};
@@ -136,14 +129,39 @@ sampleApp.directive('recentRow', [function() {
 			label: '@',
 			shows: '='
 		},
-		template: 
-		'<div class="row">' +
-			'<div class="col-sm-2 first-box"><h1 class="list-label">{{label}}</h1></div>' +
-			'<div class="col-sm-2" ng-repeat="s in shows">' +
-				'<img src={{s.url_new}}>' +
-			'</div>' +
-		'</div>',
+		templateUrl:'app/shared_components/browserecent.html',
 	}
 }]);
+
+sampleApp.directive('socialMedia', [function () {
+	return {
+		restrict: 'A',
+		scope: {
+			includes: '=sample',
+			label: '@'
+		},
+		templateUrl: 'app/shared_components/footer.html',
+		link: function (scope, iElement, iAttrs) {
+			console.log(scope.includes);
+			scope.media = [
+				{
+					name: 'google+',
+					src: 'https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-google-plus-128.png'
+				},
+				{
+					name: 'facebook',
+					src: 'http://huboncampus.com/wp-content/themes/hub-tucson2/images/social/facebook/facebook-256-black.png'
+				},
+				{
+					name: 'twitter',
+					src: 'http://icon-icons.com/icons2/67/PNG/128/twitter_13327.png'
+				}
+
+			];
+
+			}
+		}
+	}]);
+
 
 

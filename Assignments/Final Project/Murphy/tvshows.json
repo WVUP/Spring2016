@@ -1,0 +1,156 @@
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310ab"),
+	"series" : "Agents of SHIELD",
+	"genre" : "Action",
+	"episode" : "1",
+	"name" : "Mutants",
+	"summary" : "Comic book stuff",
+	"url" : "http://projects.accessdenied.ws/images/shield.jpg",
+	"popular" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310ac"),
+	"series" : "Stargate SG1",
+	"genre" : "SciFi",
+	"episode" : "1",
+	"name" : "Wormhole",
+	"summary" : "Zoom through the gate.",
+	"url" : "http://projects.accessdenied.ws/images/sg1.jpg",
+	"popular" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310ad"),
+	"series" : "Star Trek Voyager",
+	"genre" : "SciFi",
+	"episode" : "1",
+	"name" : "The Caretaker",
+	"summary" : "Alien moves universe around for crew",
+	"url" : "http://projects.accessdenied.ws/images/voyager.jpg",
+	"preview" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310ae"),
+	"series" : "Game of Thrones",
+	"genre" : "Action",
+	"episode" : "1",
+	"name" : "Poop Deck",
+	"summary" : "He throws some poop on the deck.",
+	"url" : "http://projects.accessdenied.ws/images/got.jpg",
+	"popular" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310af"),
+	"series" : "Orange is the New Black",
+	"genre" : "Comedy",
+	"episode" : "1",
+	"name" : "Who's Your Mommy",
+	"summary" : "Prison chicks",
+	"url" : "http://projects.accessdenied.ws/images/orange.jpg"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b0"),
+	"series" : "Arrow",
+	"genre" : "Action",
+	"episode" : "1",
+	"name" : "Into the Arrow",
+	"summary" : "He gets into the arrow.",
+	"url" : "http://projects.accessdenied.ws/images/arrow.jpg",
+	"popular" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b1"),
+	"series" : "Stargate Atlantis",
+	"genre" : "SciFi",
+	"episode" : "1",
+	"name" : "Atlantis found",
+	"summary" : "They find Atlantis.",
+	"url" : "http://projects.accessdenied.ws/images/sga.jpg"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b2"),
+	"series" : "Star Trek The Next Generation",
+	"genre" : "SciFi",
+	"episode" : "1",
+	"name" : "Encounter at Farpoint",
+	"summary" : "Crystalline entity traps Farpoint",
+	"url" : "http://projects.accessdenied.ws/images/tng.jpg"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b4"),
+	"series" : "Stargate Universe",
+	"genre" : "SciFi",
+	"episode" : "1",
+	"name" : "More Wormholes",
+	"summary" : "They go through the gate to a ship called Destiny.",
+	"url" : "http://projects.accessdenied.ws/images/sgu.jpg"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b6"),
+	"series" : "Sense8",
+	"genre" : "Action",
+	"episode" : "1",
+	"name" : "We are one",
+	"summary" : "Lots of people, collective mind.",
+	"url" : "http://projects.accessdenied.ws/images/sense8.jpg",
+	"recent" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b7"),
+	"series" : "Spartacus Blood and Sand",
+	"genre" : "Action",
+	"episode" : "1",
+	"name" : "Rome",
+	"summary" : "Gladiators fight",
+	"url" : "http://projects.accessdenied.ws/images/spartacus.jpg",
+	"recent" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b9"),
+	"series" : "The Big Bang Theory",
+	"genre" : "Comedy",
+	"episode" : "1",
+	"name" : "Funny Haha",
+	"summary" : "Stuff happens.  We laugh.",
+	"url" : "http://projects.accessdenied.ws/images/bigbang.jpg",
+	"preview" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310ba"),
+	"series" : "Downton Abbey",
+	"genre" : "Drama",
+	"episode" : "5",
+	"name" : "Titanic",
+	"summary" : "Rich English people and their servants...",
+	"url" : "http://projects.accessdenied.ws/images/downton.jpg",
+	"recent" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310bc"),
+	"series" : "Firefly",
+	"genre" : "SciFi",
+	"episode" : "1",
+	"name" : "Zoom Zoom",
+	"summary" : "Space cowboys and girls",
+	"url" : "http://projects.accessdenied.ws/images/firefly.jpg",
+	"recent" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310b8"),
+	"series" : "Shannara Chronicles",
+	"episode" : "1",
+	"genre" : "Fantasy",
+	"name" : "elves save the world again",
+	"summary" : "save a tree, save the world",
+	"url" : "http://projects.accessdenied.ws/images/shannara.jpg",
+	"preview" : "yes"
+},
+{
+	"_id" : ObjectId("570f1f3ae7b1872421c310bd"),
+	"series" : "Avatar: The Last Airbender",
+	"genre" : "Animated",
+	"episode" : "1",
+	"name" : "water",
+	"summary" : "aang thaws",
+	"url" : "http://projects.accessdenied.ws/images/avatar.jpg",
+	"preview" : "yes"
+}

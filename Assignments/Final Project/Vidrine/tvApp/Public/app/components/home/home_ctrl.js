@@ -2,6 +2,7 @@ tvApp.controller('homeCtrl', ['$scope', '$DataService', '$rootScope', function (
 
 	$(document).ready(function() {
 		$(".container").css("background-color", "#e8dcc5");
+
 	})
 
 	$scope.tv_shows = [];
@@ -28,7 +29,8 @@ tvApp.controller('homeCtrl', ['$scope', '$DataService', '$rootScope', function (
 			$scope.genres = resp.map (function (r) {
 				return {
 					url: r.url,
-					genre: r.genre
+					genre: r.genre,
+					series: r.series
 				}
 			})
 
@@ -46,7 +48,8 @@ tvApp.controller('homeCtrl', ['$scope', '$DataService', '$rootScope', function (
 
 			$scope.popular = resp.map (function (r) {
 				return {
-					url: r.url
+					url: r.url,
+					series: r.series
 				}
 			})
 
@@ -64,7 +67,8 @@ tvApp.controller('homeCtrl', ['$scope', '$DataService', '$rootScope', function (
 
 			$scope.recent = resp.map (function (r) {
 				return {
-					url: r.url
+					url: r.url,
+					series: r.series
 				}
 			})
 

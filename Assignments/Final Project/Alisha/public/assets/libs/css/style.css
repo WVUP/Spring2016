@@ -8,14 +8,64 @@
     border-bottom: 10px solid rgba(31,43,54,0.3);
     z-index: 555555;
 }
-
+.navbar-default .navbar-nav > li > a{
+  color:#df2d3b;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color:#e8dcc5;
+}
 .border-medium {
 	
 	
 }
+h3.seemore a {color:#df2d3b;margin-top:-8px;display:block;}
 
 .navbar-brand, .navbar-brand a {
 	font-family: "Bevan", "Helvetica", serif;
 	font-size: 65px;
 	color:#df2d3b !important;
 }
+
+body {background-color:#e8dcc5;font-family: Cantarell, sans-serif;font-size:16px;line-height:1.7;}
+h1,h2,h3 {font-family:Fjalla One,sans-serif;}
+h1.show,h2.show,h3.show {font-family:Fjalla One,sans-serif;margin:30px 0;}
+
+
+.first-box {
+  background-color:#826f60;
+  height:180px;
+  
+
+}
+.box {
+  text-align: center;
+}
+.list-label, .list-label a {
+  color:#fff;
+  font-family: Fjalla One, Helvetica, sans-serif;
+  font-size:57px;
+  margin-top:25px;
+}
+.list-label2, .list-label2 a {
+  color:#fff;
+  font-family: Fjalla One, Helvetica, sans-serif;
+  font-size:52px;
+}
+
+#myCarousel, #popCarousel, #recentCarousel {background-color:#cac2b0;margin:15px 0;}
+
+.rating-symbol {margin-bottom:9px;}
+
+hr{border-color:#e1b883;}
+.panel {background-color:#f7efe1;border-color:#e1b883;}
+.info{max-width:40%;}
+.box{max-width:30%;}
+.space{margin-bottom:10px;}
+.navbar{border-bottom:2px solid rgba(31,43,54,0.3);border-top:4px solid rgba(31,43,54,0.3);}
+.navbar-brand, .navbar-brand a {font-size:57px;}
+footer{background-color:#1f2b36;padding:20px;}
+footer p {color:#fff;}
+
+.carousel-control{color:#df2d3b;left:25%;}
+.topcarousel {color:#fff !important;}
+a.left.carousel-control.topcarousel{left:0 !important;}

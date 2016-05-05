@@ -1,10 +1,11 @@
-var tvApp = angular.module('tvApp', ['ui.router', 'ngMaterial']);
+var tvApp = angular.module('tvApp', ['ui.router', 'ngMaterial', 'ui.bootstrap', 'ngSanitize']);
 
 tvApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/');
 
 	$stateProvider
+
 		.state('home', {
 			url: '/',
 			templateUrl: 'app/components/home/home.html',
@@ -16,8 +17,12 @@ tvApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
 			controller: 'logCtrl'
 		})
 		.state('admin', {
-			fix: function () {
-				$(".container").css("background-color", "transparent");
+			resolve: {
+				"check": function($location, $rootScope) {
+					if (!$rootScope.loggedIn) {
+						$location.path('/login');
+					}
+				}
 			},
 			url: '/admin',
 			templateUrl: '/app/components/admin/admin.html',
@@ -28,6 +33,31 @@ tvApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
 			templateUrl: '/app/components/test/test.html',
 			conroller: 'testCtrl'
 		})
+		.state('show', {
+			url: '/shows/:showID',
+			templateUrl: '/app/components/show/show.html',
+			controller: 'showCtrl'
+		})
+		.state('allShows', {
+			url: '/shows',
+			templateUrl: '/app/components/allShows/allShows.html',
+			controller: 'showCtrl'
+		})
+		.state('allGenres', {
+			url: '/genres',
+			templateUrl: '/app/components/allGenres/allGenres.html',
+			controller: 'genresCtrl'
+		})
+		.state('allRecent', {
+			url: '/recent',
+			templateUrl: '/app/components/allRecent/allRecent.html',
+			controller: 'recentCtrl'
+		})
+		.state('allPopular', {
+			url: '/popular',
+			templateUrl: '/app/components/allPopular/allPopular.html',
+			controller: 'popularCtrl'
+		})
 
 }]);
 
@@ -35,6 +65,9 @@ tvApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
 tvApp.factory('$DataService', ['$http', function ($http) {
 	return {
 		shows: {
+			findOne: function(_id) {
+				return $http.get('/api/shows/' + _id);
+			},
 			findPreview: function() {
 			return $http.get('/api/preview');
 			},
@@ -46,7 +79,19 @@ tvApp.factory('$DataService', ['$http', function ($http) {
 			},
 			findAll: function() {
 				return $http.get('/api/all');
-			}
+			},
+			findComedy: function() {
+				return $http.get('/api/comedy');
+			},
+			findThriller: function() {
+				return $http.get('/api/thriller');
+			},
+			findAction: function() {
+				return $http.get('/api/action');
+			},
+			findDrama: function() {
+				return $http.get('/api/drama');
+			},
 		}
 	};
 }]);
@@ -70,6 +115,17 @@ tvApp.directive('prShow', [function () {
 			shows: '='
 		},
 		templateUrl: 'app/shared_components/popularAndRecent.html'
+	}
+}])
+
+tvApp.directive('rShow', [function () {
+	return {
+		restrict: 'A',
+		scope: {
+			label: '@',
+			shows: '='
+		},
+		templateUrl: 'app/shared_components/recent.html'
 	}
 }])
 

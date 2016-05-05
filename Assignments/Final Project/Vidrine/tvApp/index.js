@@ -102,9 +102,121 @@ app.get('/api/recent', function (req, res) {
 
 })
 
+app.get('/api/comedy', function (req, res) {
+
+	var collection = _db.collection('tvshows');
+
+	collection.find({genre: 'Comedy'}, function (err, cursor) {
+
+		if (err)
+			return res.send(err);
+
+		cursor.toArray(function(err, doc) {
+
+			if (err)
+				return res.send(err);
+
+			res.send(doc);
+
+		});
+
+	});
+
+})
+
+app.get('/api/action', function (req, res) {
+
+	var collection = _db.collection('tvshows');
+
+	collection.find({genre: 'Action'}, function (err, cursor) {
+
+		if (err)
+			return res.send(err);
+
+		cursor.toArray(function(err, doc) {
+
+			if (err)
+				return res.send(err);
+
+			res.send(doc);
+
+		});
+
+	});
+
+})
+
+
+app.get('/api/drama', function (req, res) {
+
+	var collection = _db.collection('tvshows');
+
+	collection.find({genre: 'Drama'}, function (err, cursor) {
+
+		if (err)
+			return res.send(err);
+
+		cursor.toArray(function(err, doc) {
+
+			if (err)
+				return res.send(err);
+
+			res.send(doc);
+
+		});
+
+	});
+
+})
+
+app.get('/api/thriller', function (req, res) {
+
+	var collection = _db.collection('tvshows');
+
+	collection.find({genre: 'Thriller'}, function (err, cursor) {
+
+		if (err)
+			return res.send(err);
+
+		cursor.toArray(function(err, doc) {
+
+			if (err)
+				return res.send(err);
+
+			res.send(doc);
+
+		});
+
+	});
+
+})
+
+
+
+app.get('/api/shows/:series', function (req, res) {
+
+	 var collection = _db.collection('tvshows');
+
+	 var _show = req.params.series;
+
+	 var query = {
+	 	series: _show
+	 };
+
+	 collection.findOne(query, function(err, doc) {
+		if(err)
+			return res.send(err);
+
+		res.send(doc);
+	});
+});
+
+
 app.post('/api/post', function (req, res) {
 
-	console.log(req.body);
+	var _user = req.body;
+	console.log(_user);
+	res.send(_user.popular);
 })
 
 
