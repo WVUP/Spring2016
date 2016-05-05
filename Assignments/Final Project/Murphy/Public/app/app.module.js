@@ -4,12 +4,18 @@ tvApp.config(['$stateProvider', '$urlRouterProvider',
 							function ($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/');
+	
 	$stateProvider
-		.state('home', {
-			url: '/',
-			templateUrl: 'app/components/home/home.html',
-			controller: 'homeCtrl'
+	.state('home', {
+		url: '/',
+		templateUrl: 'app/components/home/home.html',
+		controller: 'homeCtrl'
 		})
+	.state('details', {
+		url: '/details',
+		templateUrl: 'app/components/details/details.html',
+		controller: 'details'
+	})
 }]);
 
 

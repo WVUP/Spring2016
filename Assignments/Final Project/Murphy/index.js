@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000;
 // configuration -------------------------------------------------------------
 app.use(express.static(__dirname + '/public')); 
 
-// connects to database ------------------------------------------------------
+// connects to db and listens on assigned port -------------------------------
 var connString = 'mongodb://admin:testing@ds061405.mongolab.com:61405/wvup_shows';
 
 mongoClient.connect(connString, function(err, db) {
@@ -72,3 +72,36 @@ app.get('/recent', function (req, res) {
 		});
 	});
 })
+
+app.get('/shows', function (req, res) {
+	
+	var collection = _db.collection('tvshows');
+
+	collection.find({}, function(err, cursor) {
+		if(err)
+			return res.send(err);
+
+		cursor.toArray(function(err, docs) {
+			if(err)
+				return res.send(err);
+
+			res.send(docs);
+		});
+	});
+
+});
+
+// id ------------------------------------------------------------------------
+
+function parseID(req, res, next) {
+	var _id
+	try{
+		_id = mongodb.ObjectID(req.params.id);
+	}catch(err){
+		res.send('Error parsing: ' + err);
+		return;
+	}
+
+	req._id = _id;
+	next();
+}
