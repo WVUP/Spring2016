@@ -1,0 +1,70 @@
+
+Directives
+EAC 
+Element - 
+	<tree-control></tree-control>
+
+Attribute - 
+	<div data-tree-control></div> || <div tree-control></div>
+
+Class
+	<div class="tree-control"></div>
+
+
+
+Services - 
+Literl services.
+
+sampleApp.service || sampleApp.factory
+
+
+sampleApp.service('Repo', [function(){
+	// Need to return out via this. to show out and be used by directives
+	this.test = 'Hello';
+
+
+	var k = 'private';
+
+}]);
+
+//Dollar sign to distinguish
+// So with factory, you need to return out what is accesable via the return{
+// display:	
+//}
+sampleApp.factory('$Repo' [function(){
+	var k = 'private';
+	var test = "hello";
+
+	return{
+		display: test
+	}
+}]);
+
+
+
+samp
+
+
+// Putting data into services, so it can be cached and refrenced between states.
+
+
+
+var k = $dataSerivce.display;
+debugger;
+
+
+
+//http request
+
+sampleApp.factory('$DataService', ['$http', function($http){
+	var k = 'private';
+	var test = 'hello';
+
+	return{
+		display: test, 
+		test: test, 
+		shows: {
+			find
+		}
+	}
+})])

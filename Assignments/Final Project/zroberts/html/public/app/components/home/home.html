@@ -1,0 +1,29 @@
+<div class="carousel slide" id="carousel" data-ride="carousel">
+	<!-- Slides -->
+	<div class="carousel-inner">
+		<div ng-repeat-start="shows in async_featured" ng-if="$first" class="item active" style="background-color: {{shows.color}}">
+			<div class="wrap">
+				<img src="{{shows.slideImg}}" />
+			</div>
+		</div>
+		<div ng-repeat-end ng-if="!$first" class="item" style="background-color: {{shows.color}}">
+			<div class="wrap">
+				<img src="{{shows.slideImg}}" />
+			</div>
+		</div>
+	</div>
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+
+<div class="wrap homerows">
+	<div class="row group" data-home-rows num="1" lbl="Genre" type="genre" show="async_genre"></div>
+	<div class="row group" data-home-rows num="2" lbl="Most Popular" type="show" show="async_popular"></div>
+</div>

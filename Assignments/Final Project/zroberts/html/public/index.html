@@ -1,0 +1,36 @@
+<html ng-app="videoApp">
+	<head>
+		<script src="assets/libs/jQuery/jquery-1.12.1.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		
+		<script src="assets/libs/bootstrap-3.3.6-dist/js/bootstrap.min.js" type="text/javascript"></script>
+
+		<link rel="stylesheet" href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		
+		<script src="assets/libs/angular-ui-router.min.js"></script>
+		<script src="app/app.module.js"></script>
+		<script src="app/components/home/home_ctrl.js"></script>
+		<script src="app/components/genre/genre_ctrl.js"></script>
+	</head>
+	<body class="bluebg">
+		<header>
+			<div class="wrap group">
+				<div class="logo fltleft">
+					<h1>Prime <span>TV Shows</span></h1>
+				</div>
+				<div class="menu fltright">
+					
+				</div>
+			</div>
+		</header>
+		<div class="tanbg main">
+			<ui-view></ui-view>
+		</div>
+
+
+		
+	</body>
+</html>
+
